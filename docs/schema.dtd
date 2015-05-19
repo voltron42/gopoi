@@ -1,0 +1,50 @@
+<!ELEMENT document (meta?,header?,footer?,page+)>
+<!ATTLIST document
+  orientation (portrait|landscape) #IMPLIED
+  unit (millimeter|centimeter|point|inch) #IMPLIED
+  size (A4|A3|A5|letter|legal) #IMPLIED
+  font-directory CDATA #IMPLIED
+>
+<!ELEMENT meta (keywords?,fonts?,layers?,margins?)
+<!ATTLIST document
+  title CDATA #IMPLIED
+  author CDATA #IMPLIED
+  subject CDATA #IMPLIED
+  creator CDATA #IMPLIED
+>
+<!ELEMENT keywords (keyword+)>
+<!ATTLIST keywords
+  utf8 (yes|no) #IMPLIED
+>
+<!ELEMENT keyword (#PCDATA)>
+<!ELEMENT fonts (font+)>
+<!ELEMENT font EMPTY>
+<!ATTLIST font
+  family CDATA #REQUIRED
+  filepath CDATA #REQUIRED
+  bold (yes|no) #IMPLIED
+  italic (yes|no) #IMPLIED
+>
+<!ELEMENT layers (layer+)>
+<!ELEMENT layer EMPTY>
+<!ATTLIST layer
+  name CDATA #REQUIRED
+  visible (yes|no) #IMPLIED
+>
+<!ELEMENT margins EMPTY>
+<!ATTLIST margins
+  top CDATA #IMPLIED
+  left CDATA #IMPLIED
+  bottom CDATA #IMPLIED
+  right CDATA #IMPLIED
+>
+<!ELEMENT header (page)>
+<!ELEMENT footer (page)>
+<!ELEMENT page (setting?,object)+>
+<!ATTLIST page
+  orientation (portrait|landscape) #IMPLIED
+  width CDATA #IMPLIED
+  height CDATA #IMPLIED
+>
+<!ELEMENT setting ()>
+<!ELEMENT object ()>
