@@ -1,0 +1,13 @@
+<document>
+  <page>
+    <block>
+      <setting>
+        <font family="Arial" bold="yes" size="16"/>
+        <text>
+          <point x="40" y="10"/>
+          <body>Hello World!</body>
+        </text>
+      </setting>
+    </block>
+  </page>
+</document>

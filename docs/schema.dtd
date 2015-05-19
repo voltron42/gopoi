@@ -5,7 +5,7 @@
   size (A4|A3|A5|letter|legal) #IMPLIED
   font-directory CDATA #IMPLIED
 >
-<!ELEMENT meta (keywords?,fonts?,layers?,margins?)
+<!ELEMENT meta (keywords?,custom-fonts?,layers?,links?,margins?)
 <!ATTLIST document
   title CDATA #IMPLIED
   author CDATA #IMPLIED
@@ -17,9 +17,9 @@
   utf8 (yes|no) #IMPLIED
 >
 <!ELEMENT keyword (#PCDATA)>
-<!ELEMENT fonts (font+)>
-<!ELEMENT font EMPTY>
-<!ATTLIST font
+<!ELEMENT custom-fonts (custom-font+)>
+<!ELEMENT custom-font EMPTY>
+<!ATTLIST custom-font
   family CDATA #REQUIRED
   filepath CDATA #REQUIRED
   bold (yes|no) #IMPLIED
@@ -35,16 +35,121 @@
 <!ATTLIST margins
   top CDATA #IMPLIED
   left CDATA #IMPLIED
-  bottom CDATA #IMPLIED
   right CDATA #IMPLIED
 >
 <!ELEMENT header (page)>
 <!ELEMENT footer (page)>
-<!ELEMENT page (setting?,object)+>
+<!ELEMENT page (block|bookmark|line-break)+)>
 <!ATTLIST page
   orientation (portrait|landscape) #IMPLIED
   width CDATA #IMPLIED
   height CDATA #IMPLIED
 >
-<!ELEMENT setting ()>
-<!ELEMENT object ()>
+<!ELEMENT block (setting?,transform?,clip?,object+)>
+<!ATTLIST block
+  layer CDATA #IMPLIED
+>
+<!ELEMENT setting (font?,text-color?,draw-color?,fill-color?)>
+<!ATTLIST setting
+  x CDATA #IMPLIED
+  y CDATA #IMPLIED
+  margin CDATA #IMPLIED
+  line-width CDATA #IMPLIED
+>
+<!ELEMENT font EMPTY>
+<!ATTLIST font
+  family CDATA #IMPLIED
+  size CDATA #IMPLIED
+  bold (yes|no) #IMPLIED
+  italic (yes|no) #IMPLIED
+>
+<!ELEMENT text-color (rgb|named|hex)>
+<!ELEMENT draw-color (rgb|named|hex)>
+<!ELEMENT fill-color (rgb|named|hex)>
+<!ELEMENT rgb EMPTY>
+<!ATTLIST rgb
+  red CDATA #REQUIRED
+  green CDATA #REQUIRED
+  blue CDATA #REQUIRED
+>
+<!ELEMENT named EMPTY>
+<!ATTLIST named
+  color () #REQUIRED
+>
+<!ELEMENT hex (#PCDATA)>
+<!ELEMENT transform (skew|rotate|translate|mirror|scale)+>
+<!ELEMENT skew EMPTY>
+<!ELEMENT rotate (point)>
+<!ATTLIST rotate
+  angle CDATA #REQUIRED
+>
+<!ELEMENT translate (point)>
+<!ELEMENT mirror EMPTY>
+<!ELEMENT scale (bounds)>
+<!ELEMENT object (block|text|circle|oval|rect|image|polygon|beziergon|curve|link)>
+<!ELEMENT text (point,border?,href?,align?,body)>
+<!ATTLIST text
+  fill (yes|no) #IMPLIED
+>
+<!ELEMENT border (all|(top?,left?,right?,bottom?))>
+<!ELEMENT all EMPTY>
+<!ELEMENT top EMPTY>
+<!ELEMENT left EMPTY>
+<!ELEMENT right EMPTY>
+<!ELEMENT bottom EMPTY>
+<!ELEMENT href (#PCDATA)>
+<!ATTLIST href
+  type (internal|external) #REQUIRED
+>
+<!ELEMENT align EMPTY>
+<!ATTLIST align
+  horizontal (left|center|right) #IMPLIED
+  vertical (top|middle|bottom) #IMPLIED
+>
+<!ELEMENT body (#PCDATA)>
+<!ELEMENT circle (point)>
+<!ATTLIST circle
+  radius CDATA #REQUIRED
+  fill (yes|no) #IMPLIED
+  outline (yes|no) #IMPLIED
+>
+<!ELEMENT oval (bounds)>
+<!ATTLIST oval
+  rotate-degrees CDATA #REQUIRED
+  fill (yes|no) #IMPLIED
+  outline (yes|no) #IMPLIED
+>
+<!ELEMENT rect (bounds,gradient?)>
+<!ATTLIST rect
+  fill (yes|no) #IMPLIED
+  outline (yes|no) #IMPLIED
+>
+<!ELEMENT image (bounds,href?)>
+<!ATTLIST image
+  filepath CDATA #REQUIRED
+  flow (yes|no) #IMPLIED
+  image-format (jpg|jpeg|png|gif) #IMPLIED
+>
+<!ELEMENT polygon (point,point,point+)>
+<!ATTLIST polygon
+  fill (yes|no) #IMPLIED
+  outline (yes|no) #IMPLIED
+>
+<!ELEMENT beziergon (point,point,point+)>
+<!ATTLIST beziergon
+  fill (yes|no) #IMPLIED
+  outline (yes|no) #IMPLIED
+>
+<!ELEMENT curve (point,point,point,point?)>
+<!ATTLIST curve
+  type (bezier|cubic) #IMPLIED
+  fill (yes|no) #IMPLIED
+  outline (yes|no) #IMPLIED
+>
+<!ELEMENT link (bounds,href)>
+<!ELEMENT bounds (point,point)>
+<!ELEMENT point EMPTY>
+<!ATTLIST point
+  x CDATA #REQUIRED
+  y CDATA #REQUIRED
+>
