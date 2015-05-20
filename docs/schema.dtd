@@ -39,11 +39,16 @@
 >
 <!ELEMENT header (page)>
 <!ELEMENT footer (page)>
-<!ELEMENT page (block|bookmark|line-break)+)>
+<!ELEMENT page (bookmark|line-break|block)+>
 <!ATTLIST page
   orientation (portrait|landscape) #IMPLIED
   width CDATA #IMPLIED
   height CDATA #IMPLIED
+>
+<!ELEMENT bookmark ()>
+<!ELEMENT line-break EMPTY>
+<!ATTLIST line-break
+  position CDATA #REQUIRED
 >
 <!ELEMENT block (setting?,transform?,clip?,object+)>
 <!ATTLIST block
@@ -106,7 +111,8 @@
   horizontal (left|center|right) #IMPLIED
   vertical (top|middle|bottom) #IMPLIED
 >
-<!ELEMENT body (#PCDATA)>
+<!ELEMENT body (#PCDATA|page-number)>
+<!ELEMENT page-number EMPTY>
 <!ELEMENT circle (point)>
 <!ATTLIST circle
   radius CDATA #REQUIRED

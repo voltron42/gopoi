@@ -4,11 +4,13 @@
     <block>
       <setting>
         <font family="Arial" bold="yes" size="16"/>
+      </setting>
+      <object>
         <text>
           <point x="40" y="10"/>
           <body>Hello World!</body>
         </text>
-      </setting>
+      </object>
     </block>
   </page>
 </document>

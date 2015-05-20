@@ -1,0 +1,454 @@
+<document>
+  <header>
+    <page>
+      <block>
+        <object>
+          <image filepath="logo.png">
+            <bounds>
+              <point x="30" y="0"/>
+              <point x="40" y="6"/>
+            </bounds>
+          </image>
+        </object>
+      </block>
+      <block>
+        <setting y="5">
+          <font family="Arial" bold="yes" size="15"/>
+        </setting>
+        <object>
+          <text>
+            <point x="80" y="0"/>
+            <body></body>
+          </text>
+          <text>
+            <point x="30" y="10"/>
+            <body>Title</body>
+          </text>
+        </object>
+      </block>
+      <line-break position="20"/>
+    </page>
+  </header>
+  <footer>
+    <page>
+      <block>
+        <setting y="-15">
+          <font family="Arial" italic="yes" size="8"/>
+        </setting>
+        <object>
+          <text>
+            <point x="0" y="10"/>
+            <body>Page <page-number/></body>
+          </text>
+        </object>
+      </block>
+    </page>
+  </footer>
+  <page>
+    <block>
+      <setting>
+        <font family="Times" size="12"/>
+      </setting>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 1</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 2</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 3</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 4</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 5</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 6</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 7</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 8</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 9</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 10</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 11</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 12</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 13</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 14</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 15</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 16</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 17</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 18</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 19</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 20</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 21</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 22</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 23</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 24</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 25</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 26</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 27</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 28</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 29</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 30</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 31</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 32</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 33</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 34</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 35</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 36</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 37</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 38</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 39</body>
+            </text>
+          </object>
+        </block>
+      </object>
+      <object>
+        <block>
+          <object>
+            <text>
+              <point x="0" y="10"/>
+              <body>Printing line number 40</body>
+            </text>
+          </object>
+        </block>
+      </object>
+    </block>
+  </page>
+</document>
