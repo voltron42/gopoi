@@ -6,7 +6,7 @@
   font-directory CDATA #IMPLIED
 >
 <!ELEMENT meta (keywords?,custom-fonts?,layers?,links?,margins?)
-<!ATTLIST document
+<!ATTLIST meta
   title CDATA #IMPLIED
   author CDATA #IMPLIED
   subject CDATA #IMPLIED
@@ -112,7 +112,7 @@
   horizontal (left|center|right) #IMPLIED
   vertical (top|middle|bottom) #IMPLIED
 >
-<!ELEMENT body (#PCDATA|page-number)>
+<!ELEMENT body (#PCDATA|page-number)*>
 <!ELEMENT page-number EMPTY>
 <!ELEMENT circle (point)>
 <!ATTLIST circle
