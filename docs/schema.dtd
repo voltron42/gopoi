@@ -31,6 +31,8 @@
   name CDATA #REQUIRED
   visible (yes|no) #IMPLIED
 >
+<!ELEMENT links (link-ref+)>
+<!ELEMENT link-ref (#PCDATA)>
 <!ELEMENT margins EMPTY>
 <!ATTLIST margins
   top CDATA #IMPLIED
@@ -39,18 +41,24 @@
 >
 <!ELEMENT header (page)>
 <!ELEMENT footer (page)>
-<!ELEMENT page (bookmark|line-break|block)+>
+<!ELEMENT page (page-element+)>
 <!ATTLIST page
   orientation (portrait|landscape) #IMPLIED
   width CDATA #IMPLIED
   height CDATA #IMPLIED
 >
-<!ELEMENT bookmark ()>
+<!ELEMENT page-element (bookmark|line-break|block)>
+<!ELEMENT bookmark EMPTY>
+<!ATTLIST bookmark
+  name CDATA #REQUIRED
+  level CDATA #REQUIRED
+  position CDATA #IMPLIED
+>
 <!ELEMENT line-break EMPTY>
 <!ATTLIST line-break
   position CDATA #REQUIRED
 >
-<!ELEMENT block (setting?,transform?,clip?,object+)>
+<!ELEMENT block (setting?,transformations?,clip?,object+)>
 <!ATTLIST block
   layer CDATA #IMPLIED
 >
@@ -82,16 +90,21 @@
   color (aliceblue|antiquewhite|aqua|aquamarine|azure|beige|bisque|black|blanchedalmond|blue|blueviolet|brown|burlywood|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan|darkgoldenrod|darkgray|darkgreen|darkkhaki|darkmagenta|darkolivegreen|darkorange|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkturquoise|darkviolet|deeppink|deepskyblue|dimgray|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold|goldenrod|gray|green|greenyellow|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow|lightgray|lightgreen|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray|lightsteelblue|lightyellow|lime|limegreen|linen|magenta|maroon|mediumaquamarine|mediumblue|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive|olivedrab|orange|orangered|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|rebeccapurple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell|sienna|silver|skyblue|slateblue|slategray|snow|springgreen|steelblue|tan|teal|thistle|tomato|turquoise|violet|wheat|white|whitesmoke|yellow|yellowgreen) #REQUIRED
 >
 <!ELEMENT hex (#PCDATA)>
-<!ELEMENT transform (skew|rotate|translate|mirror|scale)+>
-<!ELEMENT skew EMPTY>
-<!ELEMENT rotate (point)>
+<!ELEMENT transformations (transform+)>
+<!ELEMENT transform (skew?,rotate?,translate?,mirror?,scale?>
+<!ELEMENT skew (angle,station)>
+<!ELEMENT angle (point)>
+<!ELEMENT station (point)>
+<!ELEMENT rotate (center)>
 <!ATTLIST rotate
   angle CDATA #REQUIRED
 >
 <!ELEMENT translate (point)>
-<!ELEMENT mirror EMPTY>
-<!ELEMENT scale (bounds)>
-<!ELEMENT object (block|text|circle|oval|rect|image|polygon|beziergon|curve|link)>
+<!ELEMENT mirror (line)>
+<!ELEMENT scale (factor,center)>
+<!ELEMENT factor (point)>
+<!ELEMENT center (point)>
+<!ELEMENT object (block|text|circle|oval|rect|image|polygon|beziergon|curve|line|link)>
 <!ELEMENT text (point,border?,href?,align?,body)>
 <!ATTLIST text
   fill (yes|no) #IMPLIED
@@ -162,8 +175,10 @@
   fill (yes|no) #IMPLIED
   outline (yes|no) #IMPLIED
 >
+<!ELEMENT line (bounds)>
 <!ELEMENT link (bounds,href)>
-<!ELEMENT bounds (point,point)>
+<!ELEMENT bounds (point,opposite)>
+<!ELEMENT opposite (point)
 <!ELEMENT point EMPTY>
 <!ATTLIST point
   x CDATA #REQUIRED
