@@ -39,15 +39,17 @@
   left CDATA #IMPLIED
   right CDATA #IMPLIED
 >
-<!ELEMENT header (page)>
-<!ELEMENT footer (page)>
-<!ELEMENT page (page-element+)>
-<!ATTLIST page
+<!ELEMENT header (elements)>
+<!ELEMENT footer (elements)>
+<!ELEMENT page (format?,elements)>
+<!ELEMENT format EMPTY>
+<!ATTLIST format
   orientation (portrait|landscape) #IMPLIED
   width CDATA #IMPLIED
   height CDATA #IMPLIED
 >
-<!ELEMENT page-element (bookmark|line-break|block)>
+<!ELEMENT elements (element+)>
+<!ELEMENT element (bookmark|line-break|block)>
 <!ELEMENT bookmark EMPTY>
 <!ATTLIST bookmark
   name CDATA #REQUIRED

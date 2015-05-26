@@ -1,8 +1,11 @@
 package model
 
 import (
+	"../../../prism"
+	"../../../sandbox/xmltogo"
 	"encoding/xml"
 	"errors"
+	"reflect"
 	"strconv"
 )
 
@@ -12,10 +15,10 @@ type Document struct {
 	Size          Size        `json:"size,attr"`
 	FontDirectory string      `json:"font-directory,attr"`
 
-	Metadata *Metadata `json:"meta"`
-	Header   Page      `json:"header>page"`
-	Footer   Page      `json:"footer>page"`
-	Pages    []Page    `json:"page"`
+	Metadata *Metadata    `json:"meta"`
+	Header   PageElements `json:"header>elements"`
+	Footer   PageElements `json:"footer>elements"`
+	Pages    []Page       `json:"page"`
 }
 
 type Orientation int
@@ -68,17 +71,41 @@ type Margins struct {
 }
 
 type Page struct {
+	PageFormat   *PageFormat  `xml:"format"`
+	PageElements PageElements `xml:"elements"`
+}
+
+type PageFormat struct {
 	Orientation Orientation `json:"orientation,attr"`
 	Width       floatstr    `xml:"width,attr"`
 	Height      floatstr    `xml:"height,attr"`
-
-	PageElements []PageElement `xml:"page-element"`
 }
 
-type PageElement struct {
-	Bookmark  *Bookmark  `xml:"bookmark"`
-	LineBreak *LineBreak `xml:"line-break"`
-	Block     *Block     `xml:"block"`
+type PageElements struct {
+	Elements []PageElement
+}
+
+func (p *PageElements) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	return pageElementMarshaller.MarshalChildren(d, start, func(item interface{}) error {
+		elem, ok := item.(PageElement)
+		if ok {
+			p.Elements = append(p.Elements, elem)
+			return nil
+		} else {
+			return errors.New("Cannot cast item to page element")
+		}
+	})
+}
+
+type PageElement interface {
+}
+
+var pageElementMarshaller = xmltogo.InterfaceMarshaller{
+	ChildMap: map[string]reflect.Type{
+		"bookmark":   reflect.TypeOf(Bookmark{}),
+		"line-break": reflect.TypeOf(LineBreak{}),
+		"block":      reflect.TypeOf(Block{}),
+	},
 }
 
 type Bookmark struct {
@@ -120,19 +147,7 @@ type Font struct {
 }
 
 type Color struct {
-	RGB   *RGB    `xml:"rgb"`
-	Named *Named  `xml:"named"`
-	Hex   *string `xml:"hex"`
-}
-
-type RGB struct {
-	Red   intstr `xml:"red,attr"`
-	Green intstr `xml:"green,attr"`
-	Blue  intstr `xml:"blue,attr"`
-}
-
-type Named struct {
-	Color string `xml:"color,attr"`
+	RGB prism.RGB
 }
 
 type Transform struct {
@@ -163,8 +178,10 @@ type Clip struct {
 }
 
 type Object struct {
-	// todo --
+
 }
+
+type Object 
 
 type Line struct {
 	Bounds Bounds `xml:"bounds"`
