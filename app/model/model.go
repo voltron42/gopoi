@@ -2,10 +2,11 @@ package model
 
 import (
 	"../../../prism"
+	"../../../prism/hex"
+	"../../../prism/named"
 	"../../../sandbox/xmltogo"
 	"encoding/xml"
 	"errors"
-	"reflect"
 	"strconv"
 )
 
@@ -101,10 +102,10 @@ type PageElement interface {
 }
 
 var pageElementMarshaller = xmltogo.InterfaceMarshaller{
-	ChildMap: map[string]reflect.Type{
-		"bookmark":   reflect.TypeOf(Bookmark{}),
-		"line-break": reflect.TypeOf(LineBreak{}),
-		"block":      reflect.TypeOf(Block{}),
+	ChildMap: map[string]func() interface{}{
+		"bookmark":   func() interface{} { return Bookmark{} },
+		"line-break": func() interface{} { return LineBreak{} },
+		"block":      func() interface{} { return Block{} },
 	},
 }
 
@@ -150,6 +151,57 @@ type Color struct {
 	RGB prism.RGB
 }
 
+func (c *Color) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	colors := []prism.RGB{}
+	colorMarshaller.MarshalChildren(d, start, func(item interface{}) error {
+		color := prism.RGB{}
+		elem, ok := item.(prism.RGB)
+		if ok {
+			color = elem
+		} else {
+			var r, g, b uint32
+			elem, ok := item.(Named)
+			if ok {
+				namedColor := namedFactory.GetColor(elem.Name)
+				r, g, b, _ = namedColor.RGBA()
+			} else {
+				elem, ok := item.(Hex)
+				if ok {
+					hexColor := hexFactory.GetColor(elem.Code)
+					r, g, b, _ = hexColor.RGBA()
+				} else {
+					return errors.New("cannot decode")
+				}
+			}
+			color.R = r
+			color.G = g
+			color.B = b
+		}
+		colors = append(colors, color)
+		return nil
+	})
+	return nil
+}
+
+var hexFactory = hex.NewFactory()
+var namedFactory = named.NewFactory()
+
+var colorMarshaller = xmltogo.InterfaceMarshaller{
+	ChildMap: map[string]func() interface{}{
+		"rgb":   func() interface{} { return prism.RGB{} },
+		"named": func() interface{} { return Named{} },
+		"hex":   func() interface{} { return Hex{} },
+	},
+}
+
+type Named struct {
+	Name string `xml:"color,attr"`
+}
+
+type Hex struct {
+	Code string `xml:",chardata"`
+}
+
 type Transform struct {
 	Skew      *Skew   `xml:"skew"`
 	Rotate    *Rotate `xml:"rotate"`
@@ -178,10 +230,7 @@ type Clip struct {
 }
 
 type Object struct {
-
 }
-
-type Object 
 
 type Line struct {
 	Bounds Bounds `xml:"bounds"`
