@@ -153,7 +153,7 @@ type Color struct {
 
 func (c *Color) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	colors := []prism.RGB{}
-	colorMarshaller.MarshalChildren(d, start, func(item interface{}) error {
+	err := colorMarshaller.MarshalChildren(d, start, func(item interface{}) error {
 		color := prism.RGB{}
 		elem, ok := item.(prism.RGB)
 		if ok {
@@ -180,6 +180,13 @@ func (c *Color) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 		colors = append(colors, color)
 		return nil
 	})
+	if err != nil {
+		return err
+	}
+	if len(colors) != 1 {
+		return errors.New("node must contain exactly one color")
+	}
+	c.RGB = colors[0]
 	return nil
 }
 
