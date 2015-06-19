@@ -1,13 +1,12 @@
 package model
 
 import (
+	"../../../changeling"
 	"../../../prism"
 	"../../../prism/hex"
 	"../../../prism/named"
-	"../../../sandbox/xmltogo"
 	"encoding/xml"
 	"errors"
-	"strconv"
 )
 
 type Document struct {
@@ -20,24 +19,6 @@ type Document struct {
 	Header   PageElements `json:"header>elements"`
 	Footer   PageElements `json:"footer>elements"`
 	Pages    []Page       `json:"page"`
-}
-
-type Orientation int
-
-func (o *Orientation) String() string {
-	return ""
-}
-
-type Unit int
-
-func (u *Unit) String() string {
-	return ""
-}
-
-type Size int
-
-func (s *Size) String() string {
-	return ""
 }
 
 type Metadata struct {
@@ -210,26 +191,26 @@ type Hex struct {
 }
 
 type Transform struct {
-	Skew      *Skew   `xml:"skew"`
-	Rotate    *Rotate `xml:"rotate"`
-	Translate *Point  `xml:"translate>point"`
-	Mirror    *Line   `xml:"mirror>line"`
-	Scale     *Scale  `xml:"scale"`
+	Skew      *Skew       `xml:"skew"`
+	Rotate    *Rotate     `xml:"rotate"`
+	Translate *Coordinate `xml:"translate>point"`
+	Mirror    *Line       `xml:"mirror>line"`
+	Scale     *Scale      `xml:"scale"`
 }
 
 type Skew struct {
-	Angle   Point `xml:"angle>point"`
-	Station Point `xml:"station>point"`
+	Angle   Coordinate `xml:"angle>point"`
+	Station Coordinate `xml:"station>point"`
 }
 
 type Rotate struct {
-	Angle  floatstr `xml:"angle,attr"`
-	Center Point    `xml:"center>point"`
+	Angle  floatstr   `xml:"angle,attr"`
+	Center Coordinate `xml:"center>point"`
 }
 
 type Scale struct {
-	Factor Point `xml:"factor>point"`
-	Center Point `xml:"center>point"`
+	Factor Coordinate `xml:"factor>point"`
+	Center Coordinate `xml:"center>point"`
 }
 
 type Clip struct {
@@ -244,47 +225,11 @@ type Line struct {
 }
 
 type Bounds struct {
-	Point    Point `xml:"point"`
-	Opposite Point `xml:"opposite>point"`
+	Coordinate Coordinate `xml:"point"`
+	Opposite   Coordinate `xml:"opposite>point"`
 }
 
-type Point struct {
+type Coordinate struct {
 	X floatstr `xml:"x,attr"`
 	Y floatstr `xml:"y,attr"`
-}
-
-type intstr int
-
-func (i *intstr) UnmarshalXMLAttr(attr xml.Attr) error {
-	num, err := strconv.Atoi(attr.Value)
-	if err != nil {
-		return err
-	}
-	*i = intstr(num)
-	return nil
-}
-
-type floatstr float64
-
-func (f *floatstr) UnmarshalXMLAttr(attr xml.Attr) error {
-	num, err := strconv.ParseFloat(attr.Value, 64)
-	if err != nil {
-		return err
-	}
-	*f = floatstr(num)
-	return nil
-}
-
-type boolstr bool
-
-func (b *boolstr) UnmarshalXMLAttr(attr xml.Attr) error {
-	switch attr.Value {
-	case "yes":
-		*b = boolstr(true)
-	case "no":
-		*b = boolstr(false)
-	default:
-		return errors.New("invalid value")
-	}
-	return nil
 }

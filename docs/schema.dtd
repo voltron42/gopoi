@@ -106,6 +106,7 @@
 <!ELEMENT scale (factor,center)>
 <!ELEMENT factor (point)>
 <!ELEMENT center (point)>
+<!ELEMENT clip ()>
 <!ELEMENT object (block|text|circle|oval|rect|image|polygon|beziergon|curve|line|link)>
 <!ELEMENT text (point,border?,href?,align?,body)>
 <!ATTLIST text
