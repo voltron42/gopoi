@@ -20,13 +20,12 @@ func (o *Orientation) String() string {
 }
 
 func (o *Orientation) UnmarshalXMLAttr(attr xml.Attr) error {
-	for index, orientation := range orientations {
-		if orientation == attr.Value {
-			*o = Orientation(index)
-			return nil
-		}
+	index, err := find(orientations, attr.Value, "orientation")
+	if err != nil {
+		return err
 	}
-	return errors.New("Invalid orientation: " + attr.Value)
+	*o = Orientation(index)
+	return nil
 }
 
 type Unit int
@@ -45,13 +44,12 @@ func (u *Unit) String() string {
 }
 
 func (u *Unit) UnmarshalXMLAttr(attr xml.Attr) error {
-	for index, unit := range units {
-		if unit == attr.Value {
-			*u = Unit(index)
-			return nil
-		}
+	index, err := find(units, attr.Value, "unit")
+	if err != nil {
+		return err
 	}
-	return errors.New("Invalid unit: " + attr.Value)
+	*u = Unit(index)
+	return nil
 }
 
 type Size int
@@ -71,11 +69,67 @@ func (s *Size) String() string {
 }
 
 func (s *Size) UnmarshalXMLAttr(attr xml.Attr) error {
-	for index, size := range sizes {
-		if size == attr.Value {
-			*s = Size(index)
-			return nil
+	index, err := find(sizes, attr.Value, "size")
+	if err != nil {
+		return err
+	}
+	*s = Size(index)
+	return nil
+}
+
+type VerticalOrientation int
+
+type ImageFormat int
+
+const (
+	Jpg ImageFormat = iota
+	Jpeg
+	Png
+	Gif
+)
+
+var imageFormats = strings.Split("jpg|jpeg|png|gif", "|")
+
+func (i *ImageFormat) String() string {
+	return imageFormats[*i]
+}
+
+func (i *ImageFormat) UnmarshalXMLAttr(attr xml.Attr) error {
+	index, err := find(imageFormats, attr.Value, "image-format")
+	if err != nil {
+		return err
+	}
+	*i = ImageFormat(index)
+	return nil
+}
+
+type CurveType int
+
+const (
+	Bezier CurveType = iota
+	Cubic
+)
+
+var curveTypes = strings.Split("bezier|cubic", "|")
+
+func (c *CurveType) String() string {
+	return curveTypes[*c]
+}
+
+func (c *CurveType) UnmarshalXMLAttr(attr xml.Attr) error {
+	index, err := find(curveTypes, attr.Value, "curveType")
+	if err != nil {
+		return err
+	}
+	*c = CurveType(index)
+	return nil
+}
+
+func find(haystack []string, needle string, label string) (int, error) {
+	for index, item := range haystack {
+		if item == needle {
+			return index, nil
 		}
 	}
-	return errors.New("Invalid size: " + attr.Value)
+	return -1, errors.New("Invalid " + label + ": " + needle)
 }

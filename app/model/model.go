@@ -1,12 +1,7 @@
 package model
 
 import (
-	"../../../changeling"
 	"../../../prism"
-	"../../../prism/hex"
-	"../../../prism/named"
-	"encoding/xml"
-	"errors"
 )
 
 type Document struct {
@@ -15,10 +10,10 @@ type Document struct {
 	Size          Size        `json:"size,attr"`
 	FontDirectory string      `json:"font-directory,attr"`
 
-	Metadata *Metadata    `json:"meta"`
-	Header   PageElements `json:"header>elements"`
-	Footer   PageElements `json:"footer>elements"`
-	Pages    []Page       `json:"page"`
+	Metadata *Metadata     `json:"meta"`
+	Header   []PageElement `json:"header>elements"`
+	Footer   []PageElement `json:"footer>elements"`
+	Pages    []Page        `json:"page"`
 }
 
 type Metadata struct {
@@ -53,8 +48,8 @@ type Margins struct {
 }
 
 type Page struct {
-	PageFormat   *PageFormat  `xml:"format"`
-	PageElements PageElements `xml:"elements"`
+	PageFormat   *PageFormat   `xml:"format"`
+	PageElements []PageElement `xml:"elements"`
 }
 
 type PageFormat struct {
@@ -67,27 +62,10 @@ type PageElements struct {
 	Elements []PageElement
 }
 
-func (p *PageElements) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	return pageElementMarshaller.MarshalChildren(d, start, func(item interface{}) error {
-		elem, ok := item.(PageElement)
-		if ok {
-			p.Elements = append(p.Elements, elem)
-			return nil
-		} else {
-			return errors.New("Cannot cast item to page element")
-		}
-	})
-}
-
-type PageElement interface {
-}
-
-var pageElementMarshaller = xmltogo.InterfaceMarshaller{
-	ChildMap: map[string]func() interface{}{
-		"bookmark":   func() interface{} { return Bookmark{} },
-		"line-break": func() interface{} { return LineBreak{} },
-		"block":      func() interface{} { return Block{} },
-	},
+type PageElement struct {
+	Bookmark  *Bookmark  `xml:"bookmark"`
+	LineBreak *LineBreak `xml:"line-break"`
+	Block     *Block     `xml:"block"`
 }
 
 type Bookmark struct {
@@ -129,57 +107,9 @@ type Font struct {
 }
 
 type Color struct {
-	RGB prism.RGB
-}
-
-func (c *Color) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	colors := []prism.RGB{}
-	err := colorMarshaller.MarshalChildren(d, start, func(item interface{}) error {
-		color := prism.RGB{}
-		elem, ok := item.(prism.RGB)
-		if ok {
-			color = elem
-		} else {
-			var r, g, b uint32
-			elem, ok := item.(Named)
-			if ok {
-				namedColor := namedFactory.GetColor(elem.Name)
-				r, g, b, _ = namedColor.RGBA()
-			} else {
-				elem, ok := item.(Hex)
-				if ok {
-					hexColor := hexFactory.GetColor(elem.Code)
-					r, g, b, _ = hexColor.RGBA()
-				} else {
-					return errors.New("cannot decode")
-				}
-			}
-			color.R = r
-			color.G = g
-			color.B = b
-		}
-		colors = append(colors, color)
-		return nil
-	})
-	if err != nil {
-		return err
-	}
-	if len(colors) != 1 {
-		return errors.New("node must contain exactly one color")
-	}
-	c.RGB = colors[0]
-	return nil
-}
-
-var hexFactory = hex.NewFactory()
-var namedFactory = named.NewFactory()
-
-var colorMarshaller = xmltogo.InterfaceMarshaller{
-	ChildMap: map[string]func() interface{}{
-		"rgb":   func() interface{} { return prism.RGB{} },
-		"named": func() interface{} { return Named{} },
-		"hex":   func() interface{} { return Hex{} },
-	},
+	RGB   *prism.RGB `xml:"rgb"`
+	Named *Named     `xml:"named"`
+	Hex   *Hex       `xml:"hex"`
 }
 
 type Named struct {
@@ -218,6 +148,31 @@ type Clip struct {
 }
 
 type Object struct {
+}
+
+type Image struct {
+}
+
+type Polygon struct {
+	Fill    boolstr `xml:"fill,attr"`
+	Outline boolstr `xml:"outline,attr"`
+
+	Points []Coordinate `xml:"point"`
+}
+
+type Beziergon struct {
+	Fill    boolstr `xml:"fill,attr"`
+	Outline boolstr `xml:"outline,attr"`
+
+	Points []Coordinate `xml:"point"`
+}
+
+type Curve struct {
+	Type    string  `xml:"type,attr"`
+	Fill    boolstr `xml:"fill,attr"`
+	Outline boolstr `xml:"outline,attr"`
+
+	Points []Coordinate `xml:"point"`
 }
 
 type Line struct {
