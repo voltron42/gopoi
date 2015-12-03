@@ -1,13 +1,13 @@
 package simple
 
 type Path struct {
-	Style          PathPaint
-	StartX, StartY float64
-	Items          []PathItem
+	Style PathPaint    `xml:"style,attr"`
+	Start Coordinate   `xml:"start>point"`
+	Items PathItemList `xml:"items"`
 }
 
 func (p Path) Draw(ctx *context) error {
-	ctx.pdf.MoveTo(p.StartX, p.StartY)
+	ctx.pdf.MoveTo(p.Start.X, p.Start.Y)
 	err := ctx.pdf.Error()
 	if err != nil {
 		return err
@@ -27,16 +27,22 @@ func (p Path) Draw(ctx *context) error {
 	return ctx.pdf.Error()
 }
 
+type PathItemList []PathItem
+
 type PathItem interface {
 	DrawPath(ctx *context) error
 }
 
 type ArcTo struct {
-	X, Y, RX, RY, DegRotate, DegStart, DegEnd float64
+	End       Coordinate `xml:"end>point"`
+	Radius    Coordinate `xml:"radius>point"`
+	DegRotate float64    `xml:"deg-rotate,attr"`
+	DegStart  float64    `xml:"deg-start,attr"`
+	DegEnd    float64    `xml:"deg-end,attr"`
 }
 
 func (a ArcTo) DrawPath(ctx *context) error {
-	ctx.pdf.ArcTo(a.X, a.Y, a.RX, a.RY, a.DegRotate, a.DegStart, a.DegEnd)
+	ctx.pdf.ArcTo(a.End.X, a.End.Y, a.Radius.X, a.Radius.Y, a.DegRotate, a.DegStart, a.DegEnd)
 	return ctx.pdf.Error()
 }
 

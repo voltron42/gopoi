@@ -1,8 +1,21 @@
 package simple
 
 import (
+	"encoding/xml"
 	"github.com/jung-kurt/gofpdf"
 )
+
+type Document struct {
+	Format Format   `xml:"format"`
+	Items  ItemList `xml:"body"`
+}
+
+type ItemList []interface{}
+
+func (i *ItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	// TODO --
+	return nil
+}
 
 type Format struct {
 	Orientation   *Orientation
@@ -41,6 +54,7 @@ func main() {
 }
 
 /*
+func (f *Fpdf) SetDisplayMode(zoomStr, layoutStr string)
 func (f *Fpdf) AliasNbPages(aliasStr string)
 func (f *Fpdf) ClearError()
 func (f *Fpdf) Err() bool

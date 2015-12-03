@@ -1,9 +1,5 @@
 package simple
 
-import (
-	"io"
-)
-
 type AddFont struct {
 	Family   string
 	Style    FontStyle
@@ -12,17 +8,6 @@ type AddFont struct {
 
 func (a AddFont) Draw(ctx *context) error {
 	ctx.pdf.AddFont(a.Family, a.Style.String(), a.FileName)
-	return ctx.pdf.Error()
-}
-
-type AddFontFromReader struct {
-	Family     string
-	Style      FontStyle
-	FileReader io.Reader
-}
-
-func (a AddFontFromReader) Draw(ctx *context) error {
-	ctx.pdf.AddFontFromReader(a.Family, a.Style.String(), a.FileReader)
 	return ctx.pdf.Error()
 }
 
@@ -44,16 +29,16 @@ func (a AddPageFormat) Draw(ctx *context) error {
 }
 
 type Image struct {
-	FileName    string
-	X, Y, W, H  float64
-	Flow        bool
-	ImageFormat *ImageFormat
-	Link        *LinkId
-	LinkString  *LinkString
+	FileName    string       `xml:"filename,attr"`
+	Frame       Frame        `xml:"frame"`
+	Flow        bool         `xml:"flow,attr"`
+	ImageFormat *ImageFormat `xml:"format,attr"`
+	Link        *LinkId      `xml:"link,attr"`
+	LinkString  *LinkString  `xml:"linkstring,attr"`
 }
 
 func (i Image) Draw(ctx *context) error {
-	ctx.pdf.Image(i.FileName, i.X, i.Y, i.W, i.H, i.Flow, i.ImageFormat.String(), int(*i.Link), string(*i.LinkString))
+	ctx.pdf.Image(i.FileName, i.Frame.X, i.Frame.Y, i.Frame.W, i.Frame.H, i.Flow, i.ImageFormat.String(), int(*i.Link), string(*i.LinkString))
 	return ctx.pdf.Error()
 }
 
