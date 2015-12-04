@@ -2,24 +2,36 @@ package main
 
 import (
 	"../"
+	"encoding/json"
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
 )
 
 func main() {
-	data, err := ioutil.ReadFile("./sample.xml")
+	bytes, err := ioutil.ReadFile("./config.json")
 	if err != nil {
 		panic(err)
 	}
-	d := simple.Document{}
-	err = xml.Unmarshal(data, &d)
+	files := []string{}
+	err = json.Unmarshal(bytes, &files)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("document: %v\n", d)
-	err = d.Publish()
-	if err != nil {
-		panic(err)
+	for _, file := range files {
+		data, err := ioutil.ReadFile(file)
+		if err != nil {
+			panic(err)
+		}
+		d := simple.Document{}
+		err = xml.Unmarshal(data, &d)
+		if err != nil {
+			panic(err)
+		}
+		fmt.Printf("document: %v\n", d)
+		err = d.Publish()
+		if err != nil {
+			panic(err)
+		}
 	}
 }

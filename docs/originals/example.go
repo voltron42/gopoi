@@ -18,3 +18,11 @@ func Filename(txt string) string {
 func FontDir() string {
 	return ""
 }
+
+func ImageFile(fileName string) string {
+	return fileName
+}
+
+func TextFile(filename string) string {
+	return filename
+}
