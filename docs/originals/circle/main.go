@@ -1,6 +1,7 @@
 package main
 
 import (
+	"../"
 	"github.com/jung-kurt/gofpdf"
 )
 
@@ -80,9 +81,7 @@ func main() {
 		pdf.SetLineWidth(thin)
 		pdf.SetLineCapStyle("butt")
 	*/
-	fileStr := "Fpdf_Circle_figures.pdf"
+	fileStr := example.Filename("Fpdf_Circle_figures")
 	err := pdf.OutputFileAndClose(fileStr)
-	if err != nil {
-		panic(err)
-	}
+	example.Summary(err, fileStr)
 }
