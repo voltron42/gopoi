@@ -1,5 +1,19 @@
 package simple
 
+type Text struct {
+	TextString string     `xml:"string,attr"`
+	Point      Coordinate `xml:"point"`
+	TextStyle  *TextStyle `xml:"text-style"`
+}
+
+func (t Text) Draw(ctx *context) error {
+	if t.TextStyle != nil {
+		t.TextStyle.set(ctx)
+	}
+	ctx.pdf.Text(t.Point.X, t.Point.Y, t.TextString)
+	return ctx.pdf.Error()
+}
+
 /*
 func (f *Fpdf) Ln(h float64)
 func (f *Fpdf) Bookmark(txtStr string, level int, y float64)

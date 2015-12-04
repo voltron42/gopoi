@@ -159,7 +159,7 @@ func (s SetLineWidth) Draw(ctx *context) error {
 
 type SetAlpha struct {
 	Alpha     float64   `xml:"alpha,attr"`
-	BlendMode BlendMode `xml:"blendmode,attr"`
+	BlendMode BlendMode `xml:"blend-mode,attr"`
 }
 
 func (s SetAlpha) Draw(ctx *context) error {
@@ -168,13 +168,11 @@ func (s SetAlpha) Draw(ctx *context) error {
 }
 
 type SetFont struct {
-	Family string       `xml:"family,attr"`
-	Style  SetFontStyle `xml:"style,attr"`
-	Size   float64      `xml:"size,attr"`
+	Font Font `xml:"font"`
 }
 
 func (s SetFont) Draw(ctx *context) error {
-	ctx.pdf.SetFont(s.Family, s.Style.String(), s.Size)
+	ctx.pdf.SetFont(s.Font.Family, s.Font.Style.String(), s.Font.Size)
 	return ctx.pdf.Error()
 }
 

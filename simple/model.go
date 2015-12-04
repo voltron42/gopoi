@@ -1,9 +1,9 @@
 package simple
 
 type AddFont struct {
-	Family   string
-	Style    FontStyle
-	FileName string
+	Family   string    `xml:"family,attr"`
+	Style    FontStyle `xml:"style,attr"`
+	FileName string    `xml:"file-name,attr"`
 }
 
 func (a AddFont) Draw(ctx *context) error {
@@ -34,7 +34,7 @@ type Image struct {
 	Flow        bool         `xml:"flow,attr"`
 	ImageFormat *ImageFormat `xml:"format,attr"`
 	Link        *LinkId      `xml:"link,attr"`
-	LinkString  *LinkString  `xml:"linkstring,attr"`
+	LinkString  *LinkString  `xml:"link-string,attr"`
 }
 
 func (i Image) Draw(ctx *context) error {

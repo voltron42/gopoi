@@ -283,7 +283,7 @@ func (b *BlendMode) UnmarshalXMLAttr(attr xml.Attr) error {
 		*b = Lighten
 	case "colordodge":
 		*b = ColorDodge
-	case "Colorburn":
+	case "colorburn":
 		*b = ColorBurn
 	case "hardlight":
 		*b = HardLight

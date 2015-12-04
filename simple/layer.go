@@ -1,9 +1,9 @@
 package simple
 
 type Layer struct {
-	Name         string
-	Visible      bool
-	LayeredItems []Drawable
+	Name         string   `xml:"name,attr"`
+	Visible      bool     `xml:"visible,attr"`
+	LayeredItems ItemList `xml:"items"`
 }
 
 func (l Layer) Draw(ctx *context) error {

@@ -1,0 +1,40 @@
+<document>
+  <format output-file="circle.pdf"/>
+  <body>
+    <set-font>
+      <font family="Helvetica" size="12"/>
+    </set-font>
+    <set-fill-color>
+      <rgb r="200" g="200" b="220"/>
+    </set-fill-color>
+    <add-page/>
+    <text string="Circles">
+      <point x="10" y="15"/>
+    </text>
+    <set-fill-color>
+      <rgb r="200" g="200" b="220"/>
+    </set-fill-color>
+    <set-line-width width="0.2"/>
+    <circle radius="10" style="D">
+      <center>
+        <point x="20" y="30"/>
+      </center>
+    </circle>
+    <circle radius="10" style="F">
+      <center>
+        <point x="45" y="30"/>
+      </center>
+    </circle>
+    <circle radius="10" style="FD">
+      <center>
+        <point x="70" y="30"/>
+      </center>
+    </circle>
+    <set-line-width width="3.0"/>
+    <circle radius="10" style="FD">
+      <center>
+        <point x="95" y="30"/>
+      </center>
+    </circle>
+  </body>
+</document>

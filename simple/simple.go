@@ -1,7 +1,6 @@
 package simple
 
 import (
-	"encoding/xml"
 	"github.com/jung-kurt/gofpdf"
 )
 
@@ -10,19 +9,19 @@ type Document struct {
 	Items  ItemList `xml:"body"`
 }
 
-type ItemList []interface{}
-
-func (i *ItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	// TODO --
-	return nil
+func (d Document) Publish() error {
+	ctx := newContext(d.Format)
+	return ctx.publish(d.Items...)
 }
 
+type ItemList []Drawable
+
 type Format struct {
-	Orientation   *Orientation
-	Unit          *Unit
-	Size          *Size
-	FontDirectory string
-	OutputFile    string
+	Orientation   *Orientation `xml:"orientation,attr"`
+	Unit          *Unit        `xml:"unit,attr"`
+	Size          *Size        `xml:"size,attr"`
+	FontDirectory string       `xml:"font-dir,attr"`
+	OutputFile    string       `xml:"output-file,attr"`
 }
 
 type context struct {
@@ -30,15 +29,27 @@ type context struct {
 	outfile string
 }
 
-func NewContext(format Format) *context {
-	return &context{pdf: gofpdf.New(format.Orientation.String(), format.Unit.String(), format.Size.String(), format.FontDirectory), outfile: format.OutputFile}
+func newContext(format Format) *context {
+	orientation := ""
+	if format.Orientation != nil {
+		orientation = format.Orientation.String()
+	}
+	unit := ""
+	if format.Unit != nil {
+		unit = format.Unit.String()
+	}
+	size := ""
+	if format.Size != nil {
+		size = format.Size.String()
+	}
+	return &context{pdf: gofpdf.New(orientation, unit, size, format.FontDirectory), outfile: format.OutputFile}
 }
 
 type Drawable interface {
 	Draw(ctx *context) error
 }
 
-func (c *context) Publish(items ...Drawable) error {
+func (c *context) publish(items ...Drawable) error {
 	for _, item := range items {
 		err := item.Draw(c)
 		if err != nil {

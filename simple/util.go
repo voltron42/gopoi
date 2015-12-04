@@ -57,7 +57,7 @@ func (s SetFontStyle) String() string {
 	return out
 }
 
-func (s SetFontStyle) UnmarshalXMLAttr(attr xml.Attr) error {
+func (s *SetFontStyle) UnmarshalXMLAttr(attr xml.Attr) error {
 	value := strings.ToLower(attr.Value)
 	s.Bold = strings.Contains(value, "b")
 	s.Italic = strings.Contains(value, "i")
@@ -81,7 +81,7 @@ func (s DrawStyle) String() string {
 	return out
 }
 
-func (s DrawStyle) UnmarshalXMLAttr(attr xml.Attr) error {
+func (s *DrawStyle) UnmarshalXMLAttr(attr xml.Attr) error {
 	value := strings.ToLower(attr.Value)
 	s.Fill = strings.Contains(value, "f")
 	s.Draw = strings.Contains(value, "d")
@@ -125,7 +125,7 @@ type ShapeStyle struct {
 	JoinStyle *JoinStyle   `xml:"join-style,attr"`
 	FillColor *RGB         `xml:"fill>rgb"`
 	DrawColor *RGB         `xml:"draw>rgb"`
-	Pattern   *DashPattern `xml:"pattern"`
+	Pattern   *DashPattern `xml:"dash-pattern"`
 	LineStyle *LineStyle   `xml:"line-style"`
 }
 
@@ -144,5 +144,25 @@ func (r *ShapeStyle) set(ctx *context) {
 	}
 	if r.LineStyle != nil {
 		r.LineStyle.set(ctx)
+	}
+}
+
+type Font struct {
+	Family string       `xml:"family,attr"`
+	Style  SetFontStyle `xml:"style,attr"`
+	Size   float64      `xml:"size,attr"`
+}
+
+type TextStyle struct {
+	Font  *Font `xml:"font"`
+	Color *RGB  `xml:"rgb"`
+}
+
+func (t TextStyle) set(ctx *context) {
+	if t.Font != nil {
+		ctx.pdf.SetFont(t.Font.Family, t.Font.Style.String(), t.Font.Size)
+	}
+	if t.Color != nil {
+		ctx.pdf.SetTextColor(t.Color.R, t.Color.G, t.Color.B)
 	}
 }

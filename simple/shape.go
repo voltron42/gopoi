@@ -7,13 +7,13 @@ import (
 type Line struct {
 	Start     Coordinate `xml:"start>point"`
 	End       Coordinate `xml:"end>point"`
-	FillColor *RGB       `xml:"fill>color"`
-	LineStyle *LineStyle `xml:"style"`
+	DrawColor *RGB       `xml:"draw>color"`
+	LineStyle *LineStyle `xml:"line-style"`
 }
 
 func (r Line) Draw(ctx *context) error {
-	if r.FillColor != nil {
-		ctx.pdf.SetFillColor(r.FillColor.R, r.FillColor.G, r.FillColor.B)
+	if r.DrawColor != nil {
+		ctx.pdf.SetDrawColor(r.DrawColor.R, r.DrawColor.G, r.DrawColor.B)
 	}
 	if r.LineStyle != nil {
 		r.LineStyle.set(ctx)

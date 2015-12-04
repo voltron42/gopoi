@@ -1,0 +1,173 @@
+<!ELEMENT document (format, items)>
+<!ELEMENT format EMPTY>
+<!ATTLIST format
+  orientation (Landscape|Portrait) #IMPLIED
+  unit (pt|cm|mm|in) #IMPLIED
+  size (A3|A4|A5|Letter|Legal) #IMPLIED
+  font-dir CDATA #IMPLIED
+  output-file CDATA #REQUIRED
+>
+<!ELEMENT items (add-font|add-page|image|path|line|rect|circle|polygon|beziergon|ellipse|arc|curve|bezier-curve|cubic-curve|linear-gradient|radial-gradient|set-draw-color|set-fill-color|set-text-color|set-margins|set-right-margin|set-left-margin|set-top-margin|set-font-size|set-line-width|set-alpha|set-font|set-line-cap-style|set-line-join-style|||||||||||||||||||)+><!ELEMENT items (add-font|add-page|image|path|line|rect|circle|polygon|beziergon|ellipse|arc|curve|bezier-curve|cubic-curve|linear-gradient|radial-gradient|set-draw-color|set-fill-color|set-text-color|set-margins|set-right-margin|set-left-margin|set-top-margin|set-font-size|set-line-width|set-alpha|set-font|set-line-cap-style|set-line-join-style|||||||||||||||||||)+><!ELEMENT items (add-font|add-page|image|path|line|rect|circle|polygon|beziergon|ellipse|arc|curve|bezier-curve|cubic-curve|linear-gradient|radial-gradient|set-draw-color|set-fill-color|set-text-color|set-margins|set-right-margin|set-left-margin|set-top-margin|set-font-size|set-line-width|set-alpha|set-font|set-line-cap-style|set-line-join-style|||||||||||||||||||)+><!ELEMENT items (add-font|add-page|image|path|line|rect|circle|polygon|beziergon|ellipse|arc|curve|bezier-curve|cubic-curve|linear-gradient|radial-gradient|set-draw-color|set-fill-color|set-text-color|set-margins|set-right-margin|set-left-margin|set-top-margin|set-font-size|set-line-width|set-alpha|set-font|set-line-cap-style|set-line-join-style|set-dash-pattern|layer)+>
+<!ELEMENT add-font EMPTY>
+<!ATTLIST format
+  family CDATA #REQUIRED
+  style (bold|italic|bolditalic) #REQUIRED
+  file-name CDATA #REQUIRED
+>
+<!ELEMENT add-page EMPTY>
+<!ELEMENT image (frame)>
+<!ATTLIST image
+  filename CDATA #REQUIRED
+  flow (true|false) #REQUIRED
+  format (jpg|jpeg|png|gif) #IMPLIED
+  link CDATA #IMPLIED
+  link-string CDATA #IMPLIED
+>
+<!ELEMENT frame EMPTY>
+<!ATTLIST image
+  x CDATA #REQUIRED
+  y CDATA #REQUIRED
+  w CDATA #REQUIRED
+  h CDATA #REQUIRED
+>
+<!ELEMENT path (style?,start,path-items)>
+<!ATTLIST path style (F|D|FD|S|s|f|f*|B|B*|b|b*) #IMPLIED>
+<!ELEMENT style (fill?,draw?,dash-pattern?,line-style?)>
+<!ATTLIST style join-style (miter|round|bevel) #REQUIRED>
+<!ELEMENT fill (rgb)>
+<!ELEMENT draw (rgb)>
+<!ELEMENT dash-pattern EMPTY>
+<!ATTLIST dash-pattern
+  dash-array CDATA #REQUIRED
+  dash-phase CDATA #REQUIRED
+>
+<!ELEMENT line-style EMPTY>
+<!ATTLIST line-style
+  width CDATA #REQUIRED
+  cap-style CDATA #REQUIRED
+>
+<!ELEMENT start (point)>
+<!ELEMENT point EMPTY>
+<!ATTLIST point
+  x CDATA #REQUIRED
+  y CDATA #REQUIRED
+>
+<!ELEMENT path-items (arc-to|line-to|curve-to|bezier-cubic-curve-to)+>
+<!ELEMENT arc-to (next,radius)>
+<!ATTLIST arc-to
+  deg-rotate CDATA #REQUIRED
+  deg-start CDATA #REQUIRED
+  deg-end CDATA #REQUIRED
+>
+<!ELEMENT next (point)>
+<!ELEMENT radius (point)
+<!ELEMENT line-to (point)>
+<!ELEMENT curve-to (center, next)>
+<!ELEMENT center (point)>
+<!ELEMENT bezier-cubic-curve-to (center1,center2,next)>
+<!ELEMENT center1 (point)>
+<!ELEMENT center2 (point)>
+<!ELEMENT line (start,end,draw?,line-style)>
+<!ELEMENT end (point)>
+<!ELEMENT rect (frame,style)>
+<!ATTLIST rect
+  style CDATA #REQUIRED
+>
+<!ELEMENT circle (center,style)>
+<!ATTLIST circle
+  radius CDATA #REQUIRED
+  style CDATA #REQUIRED
+>
+<!ELEMENT polygon (style,points)>
+<!ATTLIST polygon
+  style CDATA #REQUIRED
+>
+<!ELEMENT points (point,point,point+)>
+<!ELEMENT beziergon (style,points)>
+<!ATTLIST beziergon
+  style CDATA #REQUIRED
+>
+<!ELEMENT ellipse (radius,center,style)>
+<!ATTLIST ellipse
+  style CDATA #REQUIRED
+  deg-rotate CDATA #REQUIRED
+>
+<!ELEMENT arc (radius,center,style)>
+<!ATTLIST arc
+  style CDATA #REQUIRED
+  deg-rotate CDATA #REQUIRED
+  deg-start CDATA #REQUIRED
+  deg-end CDATA #REQUIRED
+>
+<!ELEMENT curve (start,center,end,style)>
+<!ATTLIST curve
+  style CDATA #REQUIRED
+>
+<!ELEMENT bezier-curve (start,center1,center2,end,style)>
+<!ATTLIST bezier-curve
+  style CDATA #REQUIRED
+>
+<!ELEMENT cubic-curve (start,center1,center2,end,style)>
+<!ATTLIST cubic-curve
+  style CDATA #REQUIRED
+>
+<!ELEMENT linear-gradient (frame,color1,color2,start,end)>
+<!ELEMENT color1 (rgb)>
+<!ELEMENT color2 (rgb)>
+<!ELEMENT radial-gradient (frame,color1,color2,start,end)>
+<!ATTLIST radial-gradient radius CDATA #REQUIRED>
+<!ELEMENT set-draw-color (rgb)>
+<!ELEMENT set-fill-color (rgb)>
+<!ELEMENT set-text-color (rgb)>
+<!ELEMENT set-margins EMPTY>
+<!ATTLIST set-margins
+  left CDATA #REQUIRED
+  top CDATA #REQUIRED
+  right CDATA #REQUIRED
+>
+<!ELEMENT set-right-margin EMPTY>
+<!ATTLIST set-right-margin
+  margin CDATA #REQUIRED
+>
+<!ELEMENT set-left-margin EMPTY>
+<!ATTLIST set-left-margin
+  margin CDATA #REQUIRED
+>
+<!ELEMENT set-top-margin EMPTY>
+<!ATTLIST set-top-margin
+  margin CDATA #REQUIRED
+>
+<!ELEMENT set-font-size EMPTY>
+<!ATTLIST set-font-size
+  size CDATA #REQUIRED
+>
+<!ELEMENT set-line-width EMPTY>
+<!ATTLIST set-line-width
+  width CDATA #REQUIRED
+>
+<!ELEMENT set-alpha EMPTY>
+<!ATTLIST set-alpha
+  alpha CDATA #REQUIRED
+  blend-mode (Normal|Multiply|Screen|Overlay|Darken|Lighten|ColorDodge|ColorBurn|HardLight|SoftLight|Difference|Exclusion|Hue|Saturation|Color|Luminosity) #REQUIRED
+>
+<!ELEMENT set-font (font)>
+<!ELEMENT font ELEMENT>
+<!ATTLIST font
+  family CDATA #REQUIRED
+  style CDATA #REQUIRED
+  size CDATA #REQUIRED
+>
+<!ELEMENT set-line-cap-style EMPTY>
+<!ATTLIST set-line-cap-style
+  cap-style CDATA #REQUIRED
+>
+<!ELEMENT set-line-join-style EMPTY>
+<!ATTLIST set-line-join-style
+  join-style CDATA #REQUIRED
+>
+<!ELEMENT set-dash-pattern (dash-pattern)>
+<!ELEMENT layer (items)>
+<!ATTLIST layer
+  name CDATA #REQUIRED
+  visible (true|false) #REQUIRED
+>
