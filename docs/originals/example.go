@@ -26,3 +26,8 @@ func ImageFile(fileName string) string {
 func TextFile(filename string) string {
 	return filename
 }
+
+func FontFile(filename string) string {
+	// TODO --
+	return filename
+}
