@@ -36,5 +36,254 @@
         <point x="95" y="30"/>
       </center>
     </circle>
+    <set-line-width width="0.2"/>
+    <text string="Ellipses">
+      <point x="10" y="55"/>
+    </text>
+    <set-fill-color>
+      <rgb r="220" g="200" b="200"/>
+    </set-fill-color>
+    <set-line-width width="0.2"/>
+    <ellipse deg-rotate="0" style="D">
+      <center>
+        <point x="30" y="70"/>
+      </center>
+      <radius>
+        <point x="20" y="10"/>
+      </radius>
+    </ellipse>
+    <ellipse deg-rotate="0" style="F">
+      <center>
+        <point x="75" y="70"/>
+      </center>
+      <radius>
+        <point x="20" y="10"/>
+      </radius>
+    </ellipse>
+    <ellipse deg-rotate="0" style="FD">
+      <center>
+        <point x="120" y="70"/>
+      </center>
+      <radius>
+        <point x="20" y="10"/>
+      </radius>
+    </ellipse>
+    <set-line-width width="3.0"/>
+    <ellipse deg-rotate="0" style="FD">
+      <center>
+        <point x="165" y="70"/>
+      </center>
+      <radius>
+        <point x="20" y="10"/>
+      </radius>
+    </ellipse>
+    <set-line-width width="0.2"/>
+    <text string="Curves (quadratic)">
+      <point x="10" y="95"/>
+    </text>
+    <set-fill-color>
+      <rgb r="220" g="220" b="200"/>
+    </set-fill-color>
+    <curve style="D">
+      <start>
+        <point x="10" y="125"/>
+      </start>
+      <center>
+        <point x="15" y="75"/>
+      </center>
+      <end>
+        <point x="40" y="125"/>
+      </end>
+    </curve>
+    <curve style="F">
+      <start>
+        <point x="45" y="125"/>
+      </start>
+      <center>
+        <point x="50" y="75"/>
+      </center>
+      <end>
+        <point x="75" y="125"/>
+      </end>
+    </curve>
+    <curve style="FD">
+      <start>
+        <point x="80" y="125"/>
+      </start>
+      <center>
+        <point x="85" y="75"/>
+      </center>
+      <end>
+        <point x="110" y="125"/>
+      </end>
+    </curve>
+    <set-line-width width="3.0"/>
+    <curve style="FD">
+      <start>
+        <point x="115" y="125"/>
+      </start>
+      <center>
+        <point x="120" y="75"/>
+      </center>
+      <end>
+        <point x="145" y="125"/>
+      </end>
+    </curve>
+    <set-line-cap-style cap-style="round"/>
+    <curve style="FD">
+      <start>
+        <point x="150" y="125"/>
+      </start>
+      <center>
+        <point x="155" y="75"/>
+      </center>
+      <end>
+        <point x="180" y="125"/>
+      </end>
+    </curve>
+    <set-line-width width="0.2"/>
+    <set-line-cap-style cap-style="butt"/>
+    <text string="Curves (cubic)">
+      <point x="10" y="135"/>
+    </text>
+    <set-fill-color>
+      <rgb r="220" g="200" b="220"/>
+    </set-fill-color>
+    <bezier-curve style="D">
+      <start>
+        <point x="10" y="165"/>
+      </start>
+      <center1>
+        <point x="15" y="115"/>
+      </center1>
+      <center2>
+        <point x="10" y="165"/>
+      </center2>
+      <end>
+        <point x="40" y="165"/>
+      </end>
+    </bezier-curve>
+    <bezier-curve style="F">
+      <start>
+        <point x="45" y="165"/>
+      </start>
+      <center1>
+        <point x="50" y="115"/>
+      </center1>
+      <center2>
+        <point x="45" y="165"/>
+      </center2>
+      <end>
+        <point x="75" y="165"/>
+      </end>
+    </bezier-curve>
+    <bezier-curve style="FD">
+      <start>
+        <point x="80" y="165"/>
+      </start>
+      <center1>
+        <point x="85" y="115"/>
+      </center1>
+      <center2>
+        <point x="80" y="165"/>
+      </center2>
+      <end>
+        <point x="110" y="165"/>
+      </end>
+    </bezier-curve>
+    <set-line-width width="3.0"/>
+    <bezier-curve style="FD">
+      <start>
+        <point x="115" y="165"/>
+      </start>
+      <center1>
+        <point x="120" y="115"/>
+      </center1>
+      <center2>
+        <point x="115" y="165"/>
+      </center2>
+      <end>
+        <point x="145" y="165"/>
+      </end>
+    </bezier-curve>
+    <set-line-cap-style cap-style="round"/>
+    <bezier-curve style="FD">
+      <start>
+        <point x="150" y="165"/>
+      </start>
+      <center1>
+        <point x="155" y="115"/>
+      </center1>
+      <center2>
+        <point x="150" y="165"/>
+      </center2>
+      <end>
+        <point x="180" y="165"/>
+      </end>
+    </bezier-curve>
+    <set-line-width width="0.2"/>
+    <set-line-cap-style cap-style="butt"/>
+    <text string="Arcs">
+      <point x="10" y="175"/>
+    </text>
+    <set-fill-color>
+      <rgb r="200" g="220" b="220"/>
+    </set-fill-color>
+    <set-line-width width="3.0"/>
+    <arc deg-rotate="0" deg-start="0" deg-end="180" style="FD">
+      <center>
+        <point x="45" y="210"/>
+      </center>
+      <radius>
+        <point x="20" y="10"/>
+      </radius>
+    </arc>
+    <set-line-width width="0.2"/>
+    <arc deg-rotate="0" deg-start="90" deg-end="270" style="D">
+      <center>
+        <point x="45" y="210"/>
+      </center>
+      <radius>
+        <point x="25" y="15"/>
+      </radius>
+    </arc>
+    <set-line-width width="3.0"/>
+    <arc deg-rotate="0" deg-start="0" deg-end="360" style="D">
+      <center>
+        <point x="45" y="210"/>
+      </center>
+      <radius>
+        <point x="30" y="20"/>
+      </radius>
+    </arc>
+    <set-line-cap-style cap-style="round"/>
+    <arc deg-rotate="135" deg-start="0" deg-end="180" style="FD">
+      <center>
+        <point x="135" y="210"/>
+      </center>
+      <radius>
+        <point x="20" y="10"/>
+      </radius>
+    </arc>
+    <set-line-width width="0.2"/>
+    <arc deg-rotate="135" deg-start="90" deg-end="270" style="D">
+      <center>
+        <point x="135" y="210"/>
+      </center>
+      <radius>
+        <point x="25" y="15"/>
+      </radius>
+    </arc>
+    <set-line-width width="3.0"/>
+    <arc deg-rotate="135" deg-start="0" deg-end="360" style="D">
+      <center>
+        <point x="135" y="210"/>
+      </center>
+      <radius>
+        <point x="30" y="20"/>
+      </radius>
+    </arc>
+    <set-line-width width="0.2"/>
+    <set-line-cap-style cap-style="butt"/>
   </body>
 </document>
