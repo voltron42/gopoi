@@ -1,6 +1,11 @@
 package simple
 
+import (
+	"encoding/xml"
+)
+
 type Layer struct {
+	XMLName      xml.Name `xml:"layer"`
 	Name         string   `xml:"name,attr"`
 	Visible      bool     `xml:"visible,attr"`
 	LayeredItems ItemList `xml:"items"`

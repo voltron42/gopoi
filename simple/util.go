@@ -166,3 +166,36 @@ func (t TextStyle) set(ctx *context) {
 		ctx.pdf.SetTextColor(t.Color.R, t.Color.G, t.Color.B)
 	}
 }
+
+type Border struct {
+	Top    bool `xml:"top,attr"`
+	Left   bool `xml:"left,attr"`
+	Right  bool `xml:"right,attr"`
+	Bottom bool `xml:"bottom,attr"`
+}
+
+func (b Border) String() string {
+	out := ""
+	if b.Top {
+		out += "T"
+	}
+	if b.Left {
+		out += "L"
+	}
+	if b.Right {
+		out += "R"
+	}
+	if b.Bottom {
+		out += "B"
+	}
+	return out
+}
+
+type Alignment struct {
+	Horiz HorizAlign `xml:"horiz,attr"`
+	Vert  VertAlign  `xml:"vert,attr"`
+}
+
+func (a Alignment) String() string {
+	return "LCR"[a.Horiz:1] + "TMB"[a.Vert:1]
+}

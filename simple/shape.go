@@ -1,10 +1,12 @@
 package simple
 
 import (
+	"encoding/xml"
 	"github.com/jung-kurt/gofpdf"
 )
 
 type Line struct {
+	XMLName   xml.Name   `xml:"line"`
 	Start     Coordinate `xml:"start>point"`
 	End       Coordinate `xml:"end>point"`
 	DrawColor *RGB       `xml:"draw>color"`
@@ -23,6 +25,7 @@ func (r Line) Draw(ctx *context) error {
 }
 
 type Rect struct {
+	XMLName    xml.Name    `xml:"rect"`
 	DrawStyle  DrawStyle   `xml:"style,attr"`
 	Frame      Frame       `xml:"frame"`
 	ShapeStyle *ShapeStyle `xml:"style"`
@@ -37,6 +40,7 @@ func (r Rect) Draw(ctx *context) error {
 }
 
 type Circle struct {
+	XMLName    xml.Name    `xml:"circle"`
 	Radius     float64     `xml:"radius,attr"`
 	DrawStyle  DrawStyle   `xml:"style,attr"`
 	Center     Coordinate  `xml:"center>point"`
@@ -52,6 +56,7 @@ func (c Circle) Draw(ctx *context) error {
 }
 
 type Polygon struct {
+	XMLName    xml.Name     `xml:"polygon"`
 	DrawStyle  DrawStyle    `xml:"style,attr"`
 	ShapeStyle *ShapeStyle  `xml:"style"`
 	Points     []Coordinate `xml:"points>point"`
@@ -70,6 +75,7 @@ func (p Polygon) Draw(ctx *context) error {
 }
 
 type Beziergon struct {
+	XMLName    xml.Name     `xml:"beziergon"`
 	DrawStyle  DrawStyle    `xml:"style,attr"`
 	ShapeStyle *ShapeStyle  `xml:"style"`
 	Points     []Coordinate `xml:"points>point"`
@@ -88,6 +94,7 @@ func (p Beziergon) Draw(ctx *context) error {
 }
 
 type Ellipse struct {
+	XMLName    xml.Name    `xml:"ellipse"`
 	DegRotate  float64     `xml:"deg-rotate,attr"`
 	DrawStyle  DrawStyle   `xml:"style,attr"`
 	Radius     Coordinate  `xml:"radius>point"`
@@ -104,6 +111,7 @@ func (c Ellipse) Draw(ctx *context) error {
 }
 
 type Arc struct {
+	XMLName    xml.Name    `xml:"arc"`
 	DegRotate  float64     `xml:"deg-rotate,attr"`
 	DegStart   float64     `xml:"deg-start,attr"`
 	DegEnd     float64     `xml:"deg-end,attr"`
@@ -122,6 +130,7 @@ func (c Arc) Draw(ctx *context) error {
 }
 
 type Curve struct {
+	XMLName    xml.Name    `xml:"curve"`
 	DrawStyle  DrawStyle   `xml:"style,attr"`
 	Start      Coordinate  `xml:"start>point"`
 	Center     Coordinate  `xml:"center>point"`
@@ -138,6 +147,7 @@ func (c Curve) Draw(ctx *context) error {
 }
 
 type BezierCurve struct {
+	XMLName    xml.Name    `xml:"bezier-curve"`
 	DrawStyle  DrawStyle   `xml:"style,attr"`
 	Start      Coordinate  `xml:"start>point"`
 	Center1    Coordinate  `xml:"center1>point"`
@@ -155,6 +165,7 @@ func (c BezierCurve) Draw(ctx *context) error {
 }
 
 type CubicCurve struct {
+	XMLName    xml.Name    `xml:"cubic-curve"`
 	DrawStyle  DrawStyle   `xml:"style,attr"`
 	Start      Coordinate  `xml:"start>point"`
 	Center1    Coordinate  `xml:"center1>point"`

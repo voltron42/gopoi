@@ -1,12 +1,14 @@
 package simple
 
 import (
+	"encoding/xml"
 	"github.com/jung-kurt/gofpdf"
 )
 
 type Document struct {
-	Format Format   `xml:"format"`
-	Items  ItemList `xml:"body"`
+	XMLName xml.Name `xml:"document"`
+	Format  Format   `xml:"format"`
+	Items   ItemList `xml:"body"`
 }
 
 func (d Document) Publish() error {

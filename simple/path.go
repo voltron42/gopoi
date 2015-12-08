@@ -1,6 +1,11 @@
 package simple
 
+import (
+	"encoding/xml"
+)
+
 type Path struct {
+	XMLName    xml.Name     `xml:"path"`
 	Style      PathPaint    `xml:"style,attr"`
 	Start      Coordinate   `xml:"start>point"`
 	Items      PathItemList `xml:"path-items"`
@@ -38,6 +43,7 @@ type PathItem interface {
 }
 
 type ArcTo struct {
+	XMLName   xml.Name   `xml:"arc-to"`
 	Next      Coordinate `xml:"next>point"`
 	Radius    Coordinate `xml:"radius>point"`
 	DegRotate float64    `xml:"deg-rotate,attr"`
@@ -51,7 +57,8 @@ func (a ArcTo) DrawPath(ctx *context) error {
 }
 
 type LineTo struct {
-	Next Coordinate `xml:"point"`
+	XMLName xml.Name   `xml:"line-to"`
+	Next    Coordinate `xml:"point"`
 }
 
 func (a LineTo) DrawPath(ctx *context) error {
@@ -60,8 +67,9 @@ func (a LineTo) DrawPath(ctx *context) error {
 }
 
 type CurveTo struct {
-	Center Coordinate `xml:"center>point"`
-	Next   Coordinate `xml:"next>point"`
+	XMLName xml.Name   `xml:"curve-to"`
+	Center  Coordinate `xml:"center>point"`
+	Next    Coordinate `xml:"next>point"`
 }
 
 func (a CurveTo) DrawPath(ctx *context) error {
@@ -70,6 +78,7 @@ func (a CurveTo) DrawPath(ctx *context) error {
 }
 
 type BezierCubicCurveTo struct {
+	XMLName xml.Name   `xml:"bezier-cubic-curve-to"`
 	Center1 Coordinate `xml:"center1>point"`
 	Center2 Coordinate `xml:"center2>point"`
 	Next    Coordinate `xml:"next>point"`

@@ -364,3 +364,69 @@ func (c *JoinStyle) UnmarshalXMLAttr(attr xml.Attr) error {
 	}
 	return nil
 }
+
+type NextPosition int
+
+const (
+	ToTheRight NextPosition = iota
+	NextLine
+	Below
+)
+
+func (c *NextPosition) UnmarshalXMLAttr(attr xml.Attr) error {
+	switch strings.ToLower(attr.Value) {
+	case "hextline":
+		*c = NextLine
+	case "below":
+		*c = Below
+	default:
+		*c = ToTheRight
+	}
+	return nil
+}
+
+type HorizAlign int
+
+const (
+	Left HorizAlign = iota
+	Center
+	Right
+	DefaultHorizAlign
+)
+
+func (c *HorizAlign) UnmarshalXMLAttr(attr xml.Attr) error {
+	switch strings.ToLower(attr.Value) {
+	case "left":
+		*c = Left
+	case "center":
+		*c = Center
+	case "right":
+		*c = Right
+	default:
+		*c = DefaultHorizAlign
+	}
+	return nil
+}
+
+type VertAlign int
+
+const (
+	Top VertAlign = iota
+	Middle
+	Bottom
+	DefaultVertAlign
+)
+
+func (c *VertAlign) UnmarshalXMLAttr(attr xml.Attr) error {
+	switch strings.ToLower(attr.Value) {
+	case "top":
+		*c = Top
+	case "middle":
+		*c = Middle
+	case "bottom":
+		*c = Bottom
+	default:
+		*c = DefaultVertAlign
+	}
+	return nil
+}

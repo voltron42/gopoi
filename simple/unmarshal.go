@@ -3,215 +3,137 @@ package simple
 import (
 	"../../xtraml/choice"
 	"encoding/xml"
-	"errors"
-	"fmt"
 )
 
 var pathItemChoices = choice.ChoiceParser{
-	"arc-to": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := ArcTo{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"arc-to": func() interface{} {
+		return &ArcTo{}
 	},
-	"line-to": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		l := LineTo{}
-		err := d.DecodeElement(&l, &start)
-		return l, err
+	"line-to": func() interface{} {
+		return &LineTo{}
 	},
-	"curve-to": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		c := CurveTo{}
-		err := d.DecodeElement(&c, &start)
-		return c, err
+	"curve-to": func() interface{} {
+		return &CurveTo{}
 	},
-	"bezier-cubic-curve-to": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		c := BezierCubicCurveTo{}
-		err := d.DecodeElement(&c, &start)
-		return c, err
+	"bezier-cubic-curve-to": func() interface{} {
+		return &BezierCubicCurveTo{}
 	},
 }
 
 func (p *PathItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	return pathItemChoices.ParseList(d, start, func(item interface{}) error {
-		pathItem, ok := item.(PathItem)
-		if !ok {
-			return errors.New("Item is not a valid PathItem.")
-		}
-		*p = append(*p, pathItem)
-		return nil
-	})
+	var pathItem *PathItem
+	return pathItemChoices.ParseList(d, start, p, pathItem, choice.Append)
 }
 
 var itemChoices = choice.ChoiceParser{
-	"add-font": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := AddFont{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"add-font": func() interface{} {
+		return &AddFont{}
 	},
-	"add-page": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := AddPage{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"add-page": func() interface{} {
+		return &AddPage{}
 	},
-	"image": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Image{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"image": func() interface{} {
+		return &Image{}
 	},
-	"path": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Path{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"path": func() interface{} {
+		return &Path{}
 	},
-	"line": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Line{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"line": func() interface{} {
+		return &Line{}
 	},
-	"rect": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Rect{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"rect": func() interface{} {
+		return &Rect{}
 	},
-	"circle": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Circle{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"circle": func() interface{} {
+		return &Circle{}
 	},
-	"polygon": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Polygon{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"polygon": func() interface{} {
+		return &Polygon{}
 	},
-	"beziergon": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Beziergon{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"beziergon": func() interface{} {
+		return &Beziergon{}
 	},
-	"ellipse": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Ellipse{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"ellipse": func() interface{} {
+		return &Ellipse{}
 	},
-	"arc": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Arc{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"arc": func() interface{} {
+		return &Arc{}
 	},
-	"curve": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Curve{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"curve": func() interface{} {
+		return &Curve{}
 	},
-	"bezier-curve": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := BezierCurve{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"bezier-curve": func() interface{} {
+		return &BezierCurve{}
 	},
-	"cubic-curve": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := CubicCurve{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"cubic-curve": func() interface{} {
+		return &CubicCurve{}
 	},
-	"linear-gradient": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := LinearGradient{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"linear-gradient": func() interface{} {
+		return &LinearGradient{}
 	},
-	"radial-gradient": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := RadialGradient{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"radial-gradient": func() interface{} {
+		return &RadialGradient{}
 	},
-	"set-draw-color": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetDrawColor{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-draw-color": func() interface{} {
+		return &SetDrawColor{}
 	},
-	"set-fill-color": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetFillColor{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-fill-color": func() interface{} {
+		return &SetFillColor{}
 	},
-	"set-text-color": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetTextColor{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-text-color": func() interface{} {
+		return &SetTextColor{}
 	},
-	"set-margins": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetMargins{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-margins": func() interface{} {
+		return &SetMargins{}
 	},
-	"set-right-margin": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetRightMargin{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-right-margin": func() interface{} {
+		return &SetRightMargin{}
 	},
-	"set-left-margin": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetLeftMargin{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-left-margin": func() interface{} {
+		return &SetLeftMargin{}
 	},
-	"set-top-margin": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetTopMargin{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-top-margin": func() interface{} {
+		return &SetTopMargin{}
 	},
-	"set-font-size": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetFontSize{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-font-size": func() interface{} {
+		return &SetFontSize{}
 	},
-	"set-line-width": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetLineWidth{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-line-width": func() interface{} {
+		return &SetLineWidth{}
 	},
-	"set-alpha": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetAlpha{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-alpha": func() interface{} {
+		return &SetAlpha{}
 	},
-	"set-font": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetFont{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-font": func() interface{} {
+		return &SetFont{}
 	},
-	"set-line-cap-style": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetLineCapStyle{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-line-cap-style": func() interface{} {
+		return &SetLineCapStyle{}
 	},
-	"set-line-join-style": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetLineJoinStyle{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-line-join-style": func() interface{} {
+		return &SetLineJoinStyle{}
 	},
-	"set-dash-pattern": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := SetDashPattern{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"set-dash-pattern": func() interface{} {
+		return &SetDashPattern{}
 	},
-	"layer": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Layer{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"layer": func() interface{} {
+		return &Layer{}
 	},
-	"text": func(d *xml.Decoder, start xml.StartElement) (interface{}, error) {
-		a := Text{}
-		err := d.DecodeElement(&a, &start)
-		return a, err
+	"text": func() interface{} {
+		return &Text{}
+	},
+	"set-x": func() interface{} {
+		return &SetX{}
+	},
+	"set-xy": func() interface{} {
+		return &SetXY{}
+	},
+	"set-y": func() interface{} {
+		return &SetY{}
 	},
 }
 
 func (i *ItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
-	return itemChoices.ParseList(d, start, func(item interface{}) error {
-		fmt.Printf("item: %v\n", item)
-		pathItem, ok := item.(Drawable)
-		if !ok {
-			return errors.New("Item is not a valid Drawable.")
-		}
-		*i = append(*i, pathItem)
-		return nil
-	})
+	var item *Drawable
+	return itemChoices.ParseList(d, start, i, item, choice.Append)
 }
