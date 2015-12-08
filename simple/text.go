@@ -5,7 +5,7 @@ import (
 )
 
 type Text struct {
-	XMLName    xml.Name   `xml:"text"`
+	XMLName    xml.Name   `xml:"text" json:"-"`
 	TextString string     `xml:"string,attr"`
 	Point      Coordinate `xml:"point"`
 	TextStyle  *TextStyle `xml:"text-style"`
@@ -20,7 +20,7 @@ func (t Text) Draw(ctx *context) error {
 }
 
 type Cell struct {
-	XMLName    xml.Name   `xml:"cell"`
+	XMLName    xml.Name   `xml:"cell" json:"-"`
 	TextString string     `xml:"string,attr"`
 	CellMargin *float64   `xml:"margin,attr"`
 	Point      Coordinate `xml:"point"`
@@ -39,7 +39,7 @@ func (t Cell) Draw(ctx *context) error {
 }
 
 type CellFormat struct {
-	XMLName      xml.Name     `xml:"cell-format"`
+	XMLName      xml.Name     `xml:"cell-format" json:"-"`
 	TextString   string       `xml:"string,attr"`
 	CellMargin   *float64     `xml:"margin,attr"`
 	NextPosition NextPosition `xml:"next-pos,attr"`

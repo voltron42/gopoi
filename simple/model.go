@@ -5,7 +5,7 @@ import (
 )
 
 type AddFont struct {
-	XMLName  xml.Name  `xml:"add-font"`
+	XMLName  xml.Name  `xml:"add-font" json:"-"`
 	Family   string    `xml:"family,attr"`
 	Style    FontStyle `xml:"style,attr"`
 	FileName string    `xml:"file-name,attr"`
@@ -17,7 +17,7 @@ func (a AddFont) Draw(ctx *context) error {
 }
 
 type AddPage struct {
-	XMLName xml.Name `xml:"add-page"`
+	XMLName xml.Name `xml:"add-page" json:"-"`
 }
 
 func (a AddPage) Draw(ctx *context) error {
@@ -26,7 +26,7 @@ func (a AddPage) Draw(ctx *context) error {
 }
 
 type AddPageFormat struct {
-	XMLName     xml.Name `xml:"add-page-format"`
+	XMLName     xml.Name `xml:"add-page-format" json:"-"`
 	Orientation *Orientation
 	SizeType    *SizeType
 }
@@ -37,7 +37,7 @@ func (a AddPageFormat) Draw(ctx *context) error {
 }
 
 type Image struct {
-	XMLName     xml.Name     `xml:"image"`
+	XMLName     xml.Name     `xml:"image" json:"-"`
 	FileName    string       `xml:"filename,attr"`
 	Frame       Frame        `xml:"frame"`
 	Flow        bool         `xml:"flow,attr"`
@@ -52,7 +52,7 @@ func (i Image) Draw(ctx *context) error {
 }
 
 type SetX struct {
-	XMLName xml.Name `xml:"set-x"`
+	XMLName xml.Name `xml:"set-x" json:"-"`
 	X       float64  `xml:"x,attr"`
 }
 
@@ -62,7 +62,7 @@ func (s SetX) Draw(ctx *context) error {
 }
 
 type SetXY struct {
-	XMLName xml.Name `xml:"set-xy"`
+	XMLName xml.Name `xml:"set-xy" json:"-"`
 	X       float64  `xml:"x,attr"`
 	Y       float64  `xml:"y,attr"`
 }
@@ -73,7 +73,7 @@ func (s SetXY) Draw(ctx *context) error {
 }
 
 type SetY struct {
-	XMLName xml.Name `xml:"set-x"`
+	XMLName xml.Name `xml:"set-x" json:"-"`
 	Y       float64  `xml:"Y,attr"`
 }
 

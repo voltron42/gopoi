@@ -2,9 +2,7 @@ package main
 
 import (
 	"../"
-	"encoding/json"
 	"encoding/xml"
-	"fmt"
 	"io/ioutil"
 	"math"
 	"os"
@@ -81,13 +79,7 @@ func main() {
 		}
 		y += advance
 	}
-	fmt.Println(pdf)
-	bytes, err := json.MarshalIndent(pdf, "", "  ")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(string(bytes))
-	bytes, err = xml.Marshal(pdf)
+	bytes, err := xml.MarshalIndent(pdf, "", "  ")
 	if err != nil {
 		panic(err)
 	}

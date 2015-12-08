@@ -2,6 +2,7 @@ package simple
 
 import (
 	"encoding/xml"
+	"fmt"
 	"github.com/jung-kurt/gofpdf"
 	"strconv"
 	"strings"
@@ -65,6 +66,13 @@ func (s *SetFontStyle) UnmarshalXMLAttr(attr xml.Attr) error {
 	return nil
 }
 
+func (s SetFontStyle) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: s.String(),
+	}, nil
+}
+
 type DrawStyle struct {
 	Fill bool
 	Draw bool
@@ -86,6 +94,13 @@ func (s *DrawStyle) UnmarshalXMLAttr(attr xml.Attr) error {
 	s.Fill = strings.Contains(value, "f")
 	s.Draw = strings.Contains(value, "d")
 	return nil
+}
+
+func (s DrawStyle) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: s.String(),
+	}, nil
 }
 
 type DashPattern struct {
@@ -197,5 +212,5 @@ type Alignment struct {
 }
 
 func (a Alignment) String() string {
-	return "LCR"[a.Horiz:1] + "TMB"[a.Vert:1]
+	return fmt.Sprintf("%v%v", a.Horiz.String(), a.Vert.String())
 }

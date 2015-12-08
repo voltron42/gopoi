@@ -5,7 +5,7 @@ import (
 )
 
 type LinearGradient struct {
-	XMLName xml.Name   `xml:"linear-gradient"`
+	XMLName xml.Name   `xml:"linear-gradient" json:"-"`
 	Frame   Frame      `xml:"frame"`
 	Color1  RGB        `xml:"color1>rgb"`
 	Color2  RGB        `xml:"color2>rgb"`
@@ -34,7 +34,7 @@ func (l LinearGradient) Draw(ctx *context) error {
 }
 
 type RadialGradient struct {
-	XMLName xml.Name   `xml:"radial-gradient"`
+	XMLName xml.Name   `xml:"radial-gradient" json:"-"`
 	Radius  float64    `xml:"radius,attr"`
 	Frame   Frame      `xml:"frame"`
 	Color1  RGB        `xml:"color1>rgb"`
@@ -65,7 +65,7 @@ func (l RadialGradient) Draw(ctx *context) error {
 }
 
 type SetDrawColor struct {
-	XMLName xml.Name `xml:"set-draw-color"`
+	XMLName xml.Name `xml:"set-draw-color" json:"-"`
 	Color   RGB      `xml:"rgb"`
 }
 
@@ -79,7 +79,7 @@ func (s SetDrawColor) Draw(ctx *context) error {
 }
 
 type SetFillColor struct {
-	XMLName xml.Name `xml:"set-fill-color"`
+	XMLName xml.Name `xml:"set-fill-color" json:"-"`
 	Color   RGB      `xml:"rgb"`
 }
 
@@ -93,7 +93,7 @@ func (s SetFillColor) Draw(ctx *context) error {
 }
 
 type SetTextColor struct {
-	XMLName xml.Name `xml:"set-text-color"`
+	XMLName xml.Name `xml:"set-text-color" json:"-"`
 	Color   RGB      `xml:"rgb"`
 }
 
@@ -107,7 +107,7 @@ func (s SetTextColor) Draw(ctx *context) error {
 }
 
 type SetMargins struct {
-	XMLName xml.Name `xml:"set-margins"`
+	XMLName xml.Name `xml:"set-margins" json:"-"`
 	Left    float64  `xml:"left,attr"`
 	Top     float64  `xml:"top,attr"`
 	Right   float64  `xml:"right,attr"`
@@ -123,7 +123,7 @@ func (s SetMargins) Draw(ctx *context) error {
 }
 
 type SetRightMargin struct {
-	XMLName xml.Name `xml:"set-right-margin"`
+	XMLName xml.Name `xml:"set-right-margin" json:"-"`
 	Margin  float64  `xml:"margin,attr"`
 }
 
@@ -133,7 +133,7 @@ func (s SetRightMargin) Draw(ctx *context) error {
 }
 
 type SetLeftMargin struct {
-	XMLName xml.Name `xml:"set-left-margin"`
+	XMLName xml.Name `xml:"set-left-margin" json:"-"`
 	Margin  float64  `xml:"margin,attr"`
 }
 
@@ -143,7 +143,7 @@ func (s SetLeftMargin) Draw(ctx *context) error {
 }
 
 type SetTopMargin struct {
-	XMLName xml.Name `xml:"set-top-margin"`
+	XMLName xml.Name `xml:"set-top-margin" json:"-"`
 	Margin  float64  `xml:"margin,attr"`
 }
 
@@ -153,7 +153,7 @@ func (s SetTopMargin) Draw(ctx *context) error {
 }
 
 type SetFontSize struct {
-	XMLName xml.Name `xml:"set-font-size"`
+	XMLName xml.Name `xml:"set-font-size" json:"-"`
 	Size    float64  `xml:"size,attr"`
 }
 
@@ -163,7 +163,7 @@ func (s SetFontSize) Draw(ctx *context) error {
 }
 
 type SetLineWidth struct {
-	XMLName xml.Name `xml:"set-line-width"`
+	XMLName xml.Name `xml:"set-line-width" json:"-"`
 	Width   float64  `xml:"width,attr"`
 }
 
@@ -173,7 +173,7 @@ func (s SetLineWidth) Draw(ctx *context) error {
 }
 
 type SetAlpha struct {
-	XMLName   xml.Name  `xml:"set-alpha"`
+	XMLName   xml.Name  `xml:"set-alpha json:"-""`
 	Alpha     float64   `xml:"alpha,attr"`
 	BlendMode BlendMode `xml:"blend-mode,attr"`
 }
@@ -184,7 +184,7 @@ func (s SetAlpha) Draw(ctx *context) error {
 }
 
 type SetFont struct {
-	XMLName xml.Name `xml:"set-font"`
+	XMLName xml.Name `xml:"set-font" json:"-"`
 	Font    Font     `xml:"font"`
 }
 
@@ -194,7 +194,7 @@ func (s SetFont) Draw(ctx *context) error {
 }
 
 type SetLineCapStyle struct {
-	XMLName  xml.Name `xml:"set-line-cap-style"`
+	XMLName  xml.Name `xml:"set-line-cap-style" json:"-"`
 	CapStyle CapStyle `xml:"cap-style,attr"`
 }
 
@@ -204,7 +204,7 @@ func (s SetLineCapStyle) Draw(ctx *context) error {
 }
 
 type SetLineJoinStyle struct {
-	XMLName   xml.Name  `xml:"set-line-join-style"`
+	XMLName   xml.Name  `xml:"set-line-join-style" json:"-"`
 	JoinStyle JoinStyle `xml:"join-style,attr"`
 }
 
@@ -214,7 +214,7 @@ func (s SetLineJoinStyle) Draw(ctx *context) error {
 }
 
 type SetDashPattern struct {
-	XMLName     xml.Name    `xml:"set-dash-pattern"`
+	XMLName     xml.Name    `xml:"set-dash-pattern" json:"-"`
 	DashPattern DashPattern `xml:"dash-pattern"`
 }
 

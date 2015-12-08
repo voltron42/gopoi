@@ -4,7 +4,6 @@ import (
 	"../"
 	"encoding/json"
 	"encoding/xml"
-	"fmt"
 	"io/ioutil"
 )
 
@@ -28,7 +27,6 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		fmt.Printf("document: %v\n", d)
 		err = d.Publish()
 		if err != nil {
 			panic(err)

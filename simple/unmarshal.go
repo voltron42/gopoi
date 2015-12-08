@@ -25,6 +25,10 @@ func (p *PathItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) erro
 	return pathItemChoices.ParseList(d, start, p, pathItem, choice.Append)
 }
 
+func (p PathItemList) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	return choice.WrapList(e, xml.Name{Local: "path"}, p)
+}
+
 var itemChoices = choice.ChoiceParser{
 	"add-font": func() interface{} {
 		return &AddFont{}
@@ -131,9 +135,16 @@ var itemChoices = choice.ChoiceParser{
 	"set-y": func() interface{} {
 		return &SetY{}
 	},
+	"cell-format": func() interface{} {
+		return &CellFormat{}
+	},
 }
 
 func (i *ItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	var item *Drawable
 	return itemChoices.ParseList(d, start, i, item, choice.Append)
+}
+
+func (p ItemList) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	return choice.WrapList(e, xml.Name{Local: "body"}, p)
 }

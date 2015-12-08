@@ -394,6 +394,12 @@ const (
 	DefaultHorizAlign
 )
 
+var horizAligns = []string{"L", "C", "R", ""}
+
+func (c *HorizAlign) String() string {
+	return horizAligns[int(*c)]
+}
+
 func (c *HorizAlign) UnmarshalXMLAttr(attr xml.Attr) error {
 	switch strings.ToLower(attr.Value) {
 	case "left":
@@ -416,6 +422,12 @@ const (
 	Bottom
 	DefaultVertAlign
 )
+
+var vertAligns = []string{"T", "M", "B", ""}
+
+func (c *VertAlign) String() string {
+	return vertAligns[int(*c)]
+}
 
 func (c *VertAlign) UnmarshalXMLAttr(attr xml.Attr) error {
 	switch strings.ToLower(attr.Value) {

@@ -1,0 +1,58 @@
+<document>
+  <format orientation="1" unit="1" size="1" font-dir="" output-file="polygon.pdf"></format>
+  <body>
+    <add-page></add-page>
+    <set-font>
+      <font family="Helvetica" style="" size="36"></font>
+    </set-font>
+    <set-draw-color>
+      <rgb r="0" g="80" b="180"></rgb>
+    </set-draw-color>
+    <set-x Y="12"></set-x>
+    <cell-format string="Equilateral polygons" next-pos="1" fill="false">
+      <point x="190" y="12"></point>
+      <border top="false" left="false" right="false" bottom="false"></border>
+      <alignment horiz="1" vert="3"></alignment>
+    </cell-format>
+    <set-fill-color>
+      <rgb r="230" g="230" b="0"></rgb>
+    </set-fill-color>
+    <polygon style="FD">
+      <points>
+        <point x="99" y="80.2"></point>
+        <point x="33.750000000000014" y="117.8721050646231"></point>
+        <point x="33.749999999999986" y="42.527894935376935"></point>
+      </points>
+    </polygon>
+    <polygon style="FD">
+      <points>
+        <point x="198" y="80.2"></point>
+        <point x="154.5" y="123.7"></point>
+        <point x="111" y="80.2"></point>
+        <point x="154.5" y="36.7"></point>
+      </points>
+    </polygon>
+    <set-fill-color>
+      <rgb r="218" g="218" b="0"></rgb>
+    </set-fill-color>
+    <polygon style="FD">
+      <points>
+        <point x="99" y="179.2"></point>
+        <point x="68.94223925531021" y="220.57095845883916"></point>
+        <point x="20.307760744689787" y="204.76865847472257"></point>
+        <point x="20.307760744689787" y="153.6313415252774"></point>
+        <point x="68.94223925531021" y="137.8290415411608"></point>
+      </points>
+    </polygon>
+    <polygon style="FD">
+      <points>
+        <point x="198" y="179.2"></point>
+        <point x="176.25" y="216.87210506462307"></point>
+        <point x="132.75" y="216.87210506462307"></point>
+        <point x="111" y="179.2"></point>
+        <point x="132.74999999999997" y="141.52789493537693"></point>
+        <point x="176.24999999999997" y="141.52789493537688"></point>
+      </points>
+    </polygon>
+  </body>
+</document>

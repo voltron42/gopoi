@@ -6,7 +6,7 @@ import (
 )
 
 type Document struct {
-	XMLName xml.Name `xml:"document"`
+	XMLName xml.Name `xml:"document" json:"-"`
 	Format  Format   `xml:"format"`
 	Items   ItemList `xml:"body"`
 }
