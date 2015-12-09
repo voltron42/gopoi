@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	const rowCount = 2
-	const colCount = 2
+	const rowCount = 5
+	const colCount = 4
 	const ptSize = 36
 	var x, y, radius, gap, advance float64
 	var rgVal int

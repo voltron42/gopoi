@@ -35,6 +35,13 @@ func (o *Orientation) UnmarshalXMLAttr(attr xml.Attr) error {
 	return nil
 }
 
+func (o *Orientation) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
+}
+
 type Unit int
 
 const (
@@ -65,6 +72,13 @@ func (u *Unit) UnmarshalXMLAttr(attr xml.Attr) error {
 		*u = defaultUnit
 	}
 	return nil
+}
+
+func (o *Unit) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
 }
 
 type Size int
@@ -102,6 +116,13 @@ func (s *Size) UnmarshalXMLAttr(attr xml.Attr) error {
 	return nil
 }
 
+func (o *Size) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
+}
+
 type FontStyle int
 
 const (
@@ -137,6 +158,13 @@ func (f *FontStyle) UnmarshalXMLAttr(attr xml.Attr) error {
 	return nil
 }
 
+func (o *FontStyle) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
+}
+
 type ImageFormat int
 
 const (
@@ -167,6 +195,13 @@ func (i *ImageFormat) UnmarshalXMLAttr(attr xml.Attr) error {
 		*i = defaultFormat
 	}
 	return nil
+}
+
+func (o *ImageFormat) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
 }
 
 type PathPaint int
@@ -222,6 +257,13 @@ func (p *PathPaint) UnmarshalXMLAttr(attr xml.Attr) error {
 	return nil
 }
 
+func (o *PathPaint) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
+}
+
 type BlendMode int
 
 const (
@@ -265,6 +307,13 @@ var blendModes = []string{
 
 func (b *BlendMode) String() string {
 	return blendModes[int(*b)]
+}
+
+func (o *BlendMode) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
 }
 
 func (b *BlendMode) UnmarshalXMLAttr(attr xml.Attr) error {
@@ -322,6 +371,13 @@ func (c *CapStyle) String() string {
 	return capstyles[int(*c)]
 }
 
+func (o *CapStyle) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
+}
+
 func (c *CapStyle) UnmarshalXMLAttr(attr xml.Attr) error {
 	switch strings.ToLower(attr.Value) {
 	case "butt":
@@ -349,6 +405,13 @@ var joinstyles = []string{"miter", "round", "bevel", ""}
 
 func (c *JoinStyle) String() string {
 	return joinstyles[int(*c)]
+}
+
+func (o *JoinStyle) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
 }
 
 func (c *JoinStyle) UnmarshalXMLAttr(attr xml.Attr) error {
@@ -400,8 +463,21 @@ func (c *HorizAlign) String() string {
 	return horizAligns[int(*c)]
 }
 
+func (o HorizAlign) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
+}
+
 func (c *HorizAlign) UnmarshalXMLAttr(attr xml.Attr) error {
 	switch strings.ToLower(attr.Value) {
+	case "l":
+		*c = Left
+	case "c":
+		*c = Center
+	case "r":
+		*c = Right
 	case "left":
 		*c = Left
 	case "center":
@@ -429,8 +505,21 @@ func (c *VertAlign) String() string {
 	return vertAligns[int(*c)]
 }
 
+func (o VertAlign) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+	return xml.Attr{
+		Name:  name,
+		Value: o.String(),
+	}, nil
+}
+
 func (c *VertAlign) UnmarshalXMLAttr(attr xml.Attr) error {
 	switch strings.ToLower(attr.Value) {
+	case "t":
+		*c = Top
+	case "m":
+		*c = Middle
+	case "b":
+		*c = Bottom
 	case "top":
 		*c = Top
 	case "middle":
