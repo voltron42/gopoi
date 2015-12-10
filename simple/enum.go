@@ -257,7 +257,7 @@ func (p *PathPaint) UnmarshalXMLAttr(attr xml.Attr) error {
 	return nil
 }
 
-func (o *PathPaint) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
+func (o PathPaint) MarshalXMLAttr(name xml.Name) (xml.Attr, error) {
 	return xml.Attr{
 		Name:  name,
 		Value: o.String(),

@@ -1,0 +1,120 @@
+<document>
+  <format orientation="Landscape" unit="mm" size="A4" font-dir="" output-file="setLineJoinStyle.pdf"></format>
+  <body>
+    <add-page></add-page>
+    <path style="D">
+      <start>
+        <point x="35" y="50"></point>
+      </start>
+      <path-items>
+        <line-to>
+          <point x="110" y="105"></point>
+        </line-to>
+        <line-to>
+          <point x="35" y="160"></point>
+        </line-to>
+      </path-items>
+      <style join-style="bevel">
+        <draw>
+          <rgb r="51" g="51" b="51"></rgb>
+        </draw>
+        <line-style width="30" cap-style="butt"></line-style>
+      </style>
+    </path>
+    <path style="D">
+      <start>
+        <point x="35" y="50"></point>
+      </start>
+      <path-items>
+        <line-to>
+          <point x="110" y="105"></point>
+        </line-to>
+        <line-to>
+          <point x="35" y="160"></point>
+        </line-to>
+      </path-items>
+      <style join-style="bevel">
+        <draw>
+          <rgb r="255" g="51" b="51"></rgb>
+        </draw>
+        <line-style width="2.56" cap-style="butt"></line-style>
+      </style>
+    </path>
+    <path style="D">
+      <start>
+        <point x="110" y="50"></point>
+      </start>
+      <path-items>
+        <line-to>
+          <point x="185" y="105"></point>
+        </line-to>
+        <line-to>
+          <point x="110" y="160"></point>
+        </line-to>
+      </path-items>
+      <style join-style="miter">
+        <draw>
+          <rgb r="51" g="51" b="51"></rgb>
+        </draw>
+        <line-style width="30" cap-style="square"></line-style>
+      </style>
+    </path>
+    <path style="D">
+      <start>
+        <point x="110" y="50"></point>
+      </start>
+      <path-items>
+        <line-to>
+          <point x="185" y="105"></point>
+        </line-to>
+        <line-to>
+          <point x="110" y="160"></point>
+        </line-to>
+      </path-items>
+      <style join-style="miter">
+        <draw>
+          <rgb r="255" g="51" b="51"></rgb>
+        </draw>
+        <line-style width="2.56" cap-style="square"></line-style>
+      </style>
+    </path>
+    <path style="D">
+      <start>
+        <point x="185" y="50"></point>
+      </start>
+      <path-items>
+        <line-to>
+          <point x="260" y="105"></point>
+        </line-to>
+        <line-to>
+          <point x="185" y="160"></point>
+        </line-to>
+      </path-items>
+      <style join-style="round">
+        <draw>
+          <rgb r="51" g="51" b="51"></rgb>
+        </draw>
+        <line-style width="30" cap-style="round"></line-style>
+      </style>
+    </path>
+    <path style="D">
+      <start>
+        <point x="185" y="50"></point>
+      </start>
+      <path-items>
+        <line-to>
+          <point x="260" y="105"></point>
+        </line-to>
+        <line-to>
+          <point x="185" y="160"></point>
+        </line-to>
+      </path-items>
+      <style join-style="round">
+        <draw>
+          <rgb r="255" g="51" b="51"></rgb>
+        </draw>
+        <line-style width="2.56" cap-style="round"></line-style>
+      </style>
+    </path>
+  </body>
+</document>

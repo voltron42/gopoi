@@ -6,6 +6,7 @@ import (
 
 type Path struct {
 	XMLName    xml.Name     `xml:"path" json:"-"`
+	Close      bool         `xml:"close,attr"`
 	Style      PathPaint    `xml:"style,attr"`
 	Start      Coordinate   `xml:"start>point"`
 	Items      PathItemList `xml:"path-items"`
@@ -27,10 +28,12 @@ func (p Path) Draw(ctx *context) error {
 			return err
 		}
 	}
-	ctx.pdf.ClosePath()
-	err = ctx.pdf.Error()
-	if err != nil {
-		return err
+	if p.Close {
+		ctx.pdf.ClosePath()
+		err = ctx.pdf.Error()
+		if err != nil {
+			return err
+		}
 	}
 	ctx.pdf.DrawPath(p.Style.String())
 	return ctx.pdf.Error()

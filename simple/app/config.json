@@ -1,4 +1,5 @@
 [
   "../../docs/examples/circle.xml",
-  "../../docs/examples/polygon.xml"
+  "../../docs/examples/polygon.xml",
+  "../../docs/examples/joinstyle.xml"
 ]

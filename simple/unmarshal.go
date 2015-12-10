@@ -26,7 +26,7 @@ func (p *PathItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) erro
 }
 
 func (p PathItemList) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
-	return choice.WrapList(e, xml.Name{Local: "path"}, p)
+	return choice.WrapList(e, xml.Name{Local: "path-items"}, p)
 }
 
 var itemChoices = choice.ChoiceParser{
