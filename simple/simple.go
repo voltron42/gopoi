@@ -6,13 +6,25 @@ import (
 )
 
 type Document struct {
-	XMLName xml.Name `xml:"document" json:"-"`
-	Format  Format   `xml:"format"`
-	Items   ItemList `xml:"body"`
+	XMLName xml.Name  `xml:"document" json:"-"`
+	Format  Format    `xml:"format"`
+	Header  *ItemList `xml:"header"`
+	Footer  *ItemList `xml:"footer"`
+	Items   ItemList  `xml:"body"`
 }
 
 func (d Document) Publish() error {
 	ctx := newContext(d.Format)
+	if len(*d.Header) > 0 {
+		ctx.pdf.SetHeaderFunc(func() {
+			ctx.publish(*d.Header...)
+		})
+	}
+	if len(*d.Footer) > 0 {
+		ctx.pdf.SetFooterFunc(func() {
+			ctx.publish(*d.Footer...)
+		})
+	}
 	return ctx.publish(d.Items...)
 }
 
