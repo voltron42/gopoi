@@ -138,6 +138,9 @@ var itemChoices = choice.ChoiceParser{
 	"cell-format": func() interface{} {
 		return &CellFormat{}
 	},
+	"line-break": func() interface{} {
+		return &LineBreak{}
+	},
 }
 
 func (i *ItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {

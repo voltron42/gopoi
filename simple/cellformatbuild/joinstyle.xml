@@ -1,0 +1,1355 @@
+<document>
+  <format orientation="Portrait" unit="mm" size="A4" font-dir="" output-file="cellFormat.pdf"></format>
+  <body>
+    <set-font>
+      <font family="Arial" style="" size="14"></font>
+    </set-font>
+    <add-page></add-page>
+    <cell-format string="Country" next-pos="0" fill="false">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Capital" next-pos="0" fill="false">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Area (sq km)" next-pos="0" fill="false">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Pop. (thousands)" next-pos="0" fill="false">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Austria" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Vienna" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="84146" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="83879" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Belgium" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Brussels" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="110070" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="30528" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Denmark" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Copenhagen" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="55642" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="42915" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Finland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Helsinki" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="53884" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="338424" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="France" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Paris" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="658218" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="643801" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Germany" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Berlin" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="817996" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="357168" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Greece" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Athens" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="108151" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="131957" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Iceland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Reykjav&#39;k" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="3184" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="102775" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Ireland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Dublin" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="45812" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="70273" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Italy" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Rome" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="606815" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="301338" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Luxembourg" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Luxembourg" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="5118" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="2586" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Netherlands" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Amsterdam" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="166996" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="41543" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Norway" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Oslo" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="49893" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="385178" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Portugal" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Lisbon" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="106477" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="92212" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Spain" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Madrid" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="460301" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="505990" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Sweden" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Stockholm" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="94155" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="450295" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Switzerland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Bern" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="78665" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="41285" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="United Kingdom" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="London" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="622620" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="242495" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <add-page></add-page>
+    <cell-format string="Country" next-pos="0" fill="false">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Capital" next-pos="0" fill="false">
+      <point x="35" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Area (sq km)" next-pos="0" fill="false">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Pop. (thousands)" next-pos="0" fill="false">
+      <point x="45" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Austria" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Vienna" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="84146" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="83879" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Belgium" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Brussels" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="110070" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="30528" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Denmark" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Copenhagen" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="55642" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="42915" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Finland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Helsinki" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="53884" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="338424" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="France" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Paris" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="658218" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="643801" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Germany" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Berlin" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="817996" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="357168" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Greece" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Athens" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="108151" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="131957" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Iceland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Reykjav&#39;k" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="3184" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="102775" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Ireland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Dublin" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="45812" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="70273" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Italy" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Rome" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="606815" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="301338" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Luxembourg" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Luxembourg" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="5118" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="2586" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Netherlands" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Amsterdam" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="166996" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="41543" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Norway" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Oslo" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="49893" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="385178" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Portugal" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Lisbon" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="106477" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="92212" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Spain" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Madrid" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="460301" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="505990" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Sweden" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Stockholm" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="94155" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="450295" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Switzerland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Bern" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="78665" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="41285" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="United Kingdom" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="London" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="622620" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="242495" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="" next-pos="0" fill="false">
+      <point x="160" y="0"></point>
+      <border top="true" left="false" right="false" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <add-page></add-page>
+    <set-fill-color>
+      <rgb r="255" g="0" b="0"></rgb>
+    </set-fill-color>
+    <set-text-color>
+      <rgb r="255" g="255" b="255"></rgb>
+    </set-text-color>
+    <set-draw-color>
+      <rgb r="128" g="0" b="0"></rgb>
+    </set-draw-color>
+    <set-line-width width="0.3"></set-line-width>
+    <set-font>
+      <font family="" style="B" size="0"></font>
+    </set-font>
+    <cell-format string="Country" next-pos="0" fill="true">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Capital" next-pos="0" fill="true">
+      <point x="35" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Area (sq km)" next-pos="0" fill="true">
+      <point x="40" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Pop. (thousands)" next-pos="0" fill="true">
+      <point x="45" y="7"></point>
+      <border top="true" left="true" right="true" bottom="true"></border>
+      <alignment horiz="C" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <set-fill-color>
+      <rgb r="224" g="235" b="255"></rgb>
+    </set-fill-color>
+    <set-text-color>
+      <rgb r="0" g="0" b="0"></rgb>
+    </set-text-color>
+    <set-font>
+      <font family="" style="" size="0"></font>
+    </set-font>
+    <cell-format string="Austria" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Vienna" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="84146" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="83879" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Belgium" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Brussels" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="110070" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="30528" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Denmark" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Copenhagen" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="55642" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="42915" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Finland" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Helsinki" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="53884" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="338424" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="France" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Paris" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="658218" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="643801" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Germany" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Berlin" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="817996" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="357168" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Greece" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Athens" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="108151" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="131957" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Iceland" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Reykjav&#39;k" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="3184" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="102775" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Ireland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Dublin" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="45812" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="70273" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Italy" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Rome" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="606815" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="301338" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Luxembourg" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Luxembourg" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="5118" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="2586" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Netherlands" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Amsterdam" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="166996" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="41543" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Norway" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Oslo" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="49893" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="385178" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Portugal" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Lisbon" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="106477" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="92212" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Spain" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Madrid" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="460301" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="505990" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Sweden" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Stockholm" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="94155" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="450295" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="Switzerland" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="Bern" next-pos="0" fill="false">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="78665" next-pos="0" fill="false">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="41285" next-pos="0" fill="false">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="United Kingdom" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="London" next-pos="0" fill="true">
+      <point x="35" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="622620" next-pos="0" fill="true">
+      <point x="40" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <cell-format string="242495" next-pos="0" fill="true">
+      <point x="45" y="6"></point>
+      <border top="false" left="true" right="true" bottom="false"></border>
+      <alignment horiz="R" vert="M"></alignment>
+    </cell-format>
+    <line-break>
+      <ordinate>-1</ordinate>
+    </line-break>
+    <cell-format string="" next-pos="0" fill="false">
+      <point x="160" y="0"></point>
+      <border top="true" left="false" right="false" bottom="false"></border>
+      <alignment horiz="L" vert="M"></alignment>
+    </cell-format>
+    <add-page></add-page>
+  </body>
+</document>

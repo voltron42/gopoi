@@ -189,6 +189,15 @@ type Border struct {
 	Bottom bool `xml:"bottom,attr"`
 }
 
+func FullBorder() Border {
+	return Border{
+		Top:    true,
+		Left:   true,
+		Right:  true,
+		Bottom: true,
+	}
+}
+
 func (b Border) String() string {
 	out := ""
 	if b.Top {

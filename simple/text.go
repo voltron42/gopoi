@@ -61,6 +61,16 @@ func (t CellFormat) Draw(ctx *context) error {
 	return ctx.pdf.Error()
 }
 
+type LineBreak struct {
+	XMLName  xml.Name `xml:"line-break" json:"-"`
+	Ordinate float64  `xml:"ordinate"`
+}
+
+func (t LineBreak) Draw(ctx *context) error {
+	ctx.pdf.Ln(t.Ordinate)
+	return ctx.pdf.Error()
+}
+
 /*
 func (f *Fpdf) Ln(h float64)
 func (f *Fpdf) Bookmark(txtStr string, level int, y float64)

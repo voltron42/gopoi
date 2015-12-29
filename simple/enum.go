@@ -493,13 +493,14 @@ func (c *HorizAlign) UnmarshalXMLAttr(attr xml.Attr) error {
 type VertAlign int
 
 const (
-	Top VertAlign = iota
-	Middle
+	Middle VertAlign = iota
+	Top
 	Bottom
+	BaseLine
 	DefaultVertAlign
 )
 
-var vertAligns = []string{"T", "M", "B", ""}
+var vertAligns = []string{"M", "T", "B", "A", ""}
 
 func (c *VertAlign) String() string {
 	return vertAligns[int(*c)]
@@ -526,6 +527,10 @@ func (c *VertAlign) UnmarshalXMLAttr(attr xml.Attr) error {
 		*c = Middle
 	case "bottom":
 		*c = Bottom
+	case "a":
+		*c = BaseLine
+	case "baseline":
+		*c = BaseLine
 	default:
 		*c = DefaultVertAlign
 	}

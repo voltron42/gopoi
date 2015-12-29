@@ -2,11 +2,11 @@ package main
 
 import (
 	"../"
-	"bufio"
+	"bytes"
+	"encoding/csv"
 	"fmt"
 	"github.com/jung-kurt/gofpdf"
-	"os"
-	"strings"
+	"io/ioutil"
 )
 
 func main() {
@@ -17,28 +17,27 @@ func main() {
 	countryList := make([]countryType, 0, 8)
 	header := []string{"Country", "Capital", "Area (sq km)", "Pop. (thousands)"}
 	loadData := func(fileStr string) {
-		fl, err := os.Open(fileStr)
-		if err == nil {
-			scanner := bufio.NewScanner(fl)
-			var c countryType
-			for scanner.Scan() {
-				// Austria;Vienna;83859;8075
-				lineStr := scanner.Text()
-				list := strings.Split(lineStr, ";")
-				if len(list) == 4 {
-					c.nameStr = list[0]
-					c.capitalStr = list[1]
-					c.areaStr = list[2]
-					c.popStr = list[3]
-					countryList = append(countryList, c)
-				} else {
-					err = fmt.Errorf("error tokenizing %s", lineStr)
-				}
-			}
-			fl.Close()
-			if len(countryList) == 0 {
-				err = fmt.Errorf("error loading data from %s", fileStr)
-			}
+		data, err := ioutil.ReadFile(fileStr)
+		if err != nil {
+			pdf.SetError(err)
+			return
+		}
+		rows, err := csv.NewReader(bytes.NewReader(data)).ReadAll()
+		if err != nil {
+			pdf.SetError(err)
+			return
+		}
+		var c countryType
+		for _, list := range rows {
+			// Austria;Vienna;83859;8075
+			c.nameStr = list[0]
+			c.capitalStr = list[1]
+			c.areaStr = list[2]
+			c.popStr = list[3]
+			countryList = append(countryList, c)
+		}
+		if len(countryList) == 0 {
+			err = fmt.Errorf("error loading data from %s", fileStr)
 		}
 		if err != nil {
 			pdf.SetError(err)
@@ -75,9 +74,9 @@ func main() {
 		for _, c := range countryList {
 			pdf.CellFormat(w[0], 6, c.nameStr, "LR", 0, "", false, 0, "")
 			pdf.CellFormat(w[1], 6, c.capitalStr, "LR", 0, "", false, 0, "")
-			pdf.CellFormat(w[2], 6, strDelimit(c.areaStr, ",", 3),
+			pdf.CellFormat(w[2], 6, c.areaStr,
 				"LR", 0, "R", false, 0, "")
-			pdf.CellFormat(w[3], 6, strDelimit(c.popStr, ",", 3),
+			pdf.CellFormat(w[3], 6, c.popStr,
 				"LR", 0, "R", false, 0, "")
 			pdf.Ln(-1)
 		}
@@ -110,16 +109,16 @@ func main() {
 		for _, c := range countryList {
 			pdf.CellFormat(w[0], 6, c.nameStr, "LR", 0, "", fill, 0, "")
 			pdf.CellFormat(w[1], 6, c.capitalStr, "LR", 0, "", fill, 0, "")
-			pdf.CellFormat(w[2], 6, strDelimit(c.areaStr, ",", 3),
+			pdf.CellFormat(w[2], 6, c.areaStr,
 				"LR", 0, "R", fill, 0, "")
-			pdf.CellFormat(w[3], 6, strDelimit(c.popStr, ",", 3),
+			pdf.CellFormat(w[3], 6, c.popStr,
 				"LR", 0, "R", fill, 0, "")
 			pdf.Ln(-1)
 			fill = !fill
 		}
 		pdf.CellFormat(wSum, 0, "", "T", 0, "", false, 0, "")
 	}
-	loadData(example.TextFile("countries.txt"))
+	loadData(example.TextFile("./countries.csv"))
 	pdf.SetFont("Arial", "", 14)
 	pdf.AddPage()
 	basicTable()
@@ -130,9 +129,4 @@ func main() {
 	fileStr := example.Filename("Fpdf_CellFormat_1_tables")
 	err := pdf.OutputFileAndClose(fileStr)
 	example.Summary(err, fileStr)
-}
-
-func strDelimit(record string, delim string, index int) string {
-	list := strings.Split(record, delim)
-	return list[index]
 }

@@ -15,15 +15,19 @@ type Document struct {
 
 func (d Document) Publish() error {
 	ctx := newContext(d.Format)
-	if len(*d.Header) > 0 {
-		ctx.pdf.SetHeaderFunc(func() {
-			ctx.publish(*d.Header...)
-		})
+	if d.Header != nil {
+		if len(*d.Header) > 0 {
+			ctx.pdf.SetHeaderFunc(func() {
+				ctx.publish(*d.Header...)
+			})
+		}
 	}
-	if len(*d.Footer) > 0 {
-		ctx.pdf.SetFooterFunc(func() {
-			ctx.publish(*d.Footer...)
-		})
+	if d.Footer != nil {
+		if len(*d.Footer) > 0 {
+			ctx.pdf.SetFooterFunc(func() {
+				ctx.publish(*d.Footer...)
+			})
+		}
 	}
 	return ctx.publish(d.Items...)
 }
