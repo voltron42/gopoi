@@ -141,6 +141,12 @@ var itemChoices = choice.ChoiceParser{
 	"line-break": func() interface{} {
 		return &LineBreak{}
 	},
+	"transform": func() interface{} {
+		return &Transform{}
+	},
+	"clip": func() interface{} {
+		return &Clip{}
+	},
 }
 
 func (i *ItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
@@ -150,4 +156,87 @@ func (i *ItemList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 
 func (p ItemList) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	return choice.WrapList(e, xml.Name{Local: "body"}, p)
+}
+
+var transformChoices = choice.ChoiceParser{
+	"horizontal-mirror": func() interface{} {
+		return &HorizontalMirror{}
+	},
+	"point-mirror": func() interface{} {
+		return &PointMirror{}
+	},
+	"line-mirror": func() interface{} {
+		return &LineMirror{}
+	},
+	"vertical-mirror": func() interface{} {
+		return &VerticalMirror{}
+	},
+	"rotate": func() interface{} {
+		return &Rotate{}
+	},
+	"scale": func() interface{} {
+		return &Scale{}
+	},
+	"scale-x": func() interface{} {
+		return &ScaleX{}
+	},
+	"scale-y": func() interface{} {
+		return &ScaleY{}
+	},
+	"scale-xy": func() interface{} {
+		return &ScaleXY{}
+	},
+	"skew": func() interface{} {
+		return &Skew{}
+	},
+	"skew-x": func() interface{} {
+		return &SkewX{}
+	},
+	"skew-y": func() interface{} {
+		return &SkewY{}
+	},
+	"translate": func() interface{} {
+		return &Translate{}
+	},
+	"translate-x": func() interface{} {
+		return &TranslateX{}
+	},
+	"translate-y": func() interface{} {
+		return &TranslateY{}
+	},
+}
+
+func (i *TransformationList) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	var item *Transformation
+	return transformChoices.ParseList(d, start, i, item, choice.Append)
+}
+
+func (p TransformationList) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	return choice.WrapList(e, xml.Name{Local: "transformation"}, p)
+}
+
+var clipChoices = choice.ChoiceParser{
+	"clip-circle": func() interface{} {
+		return &ClipCircle{}
+	},
+	"clip-ellipse": func() interface{} {
+		return &ClipEllipse{}
+	},
+	"clip-polygon": func() interface{} {
+		return &ClipPolygon{}
+	},
+	"clip-rect": func() interface{} {
+		return &ClipRect{}
+	},
+	"clip-rounded-rect": func() interface{} {
+		return &ClipRoundedRect{}
+	},
+	"clip-text": func() interface{} {
+		return &ClipText{}
+	},
+}
+
+func (i *ClipWrapper) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	var item *ClipItem
+	return clipChoices.ParseList(d, start, &i.ClipItem, item, choice.Set)
 }

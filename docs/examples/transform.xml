@@ -1,0 +1,232 @@
+<document>
+  <format orientation="Portrait" unit="mm" size="A4" font-dir="" output-file="transform.pdf"></format>
+  <body>
+    <add-page></add-page>
+    <set-font>
+      <font family="Helvetica" style="" size="36"></font>
+    </set-font>
+    <text string="Transformations">
+      <point x="59.1276" y="22.700000000000003"></point>
+    </text>
+    <transform>
+      <transformation>
+        <vertical-mirror y-axis="23.200000000000003"></vertical-mirror>
+      </transformation>
+      <body>
+        <clip>
+          <clip-item>
+            <clip-text text="Transformations" outline="false">
+              <point x="59.1276" y="22.700000000000003"></point>
+            </clip-text>
+          </clip-item>
+          <body>
+            <linear-gradient>
+              <frame x="59.1276" y="10" w="91.7448" h="16.700000000000003"></frame>
+              <color1 r="120" g="120" b="120"></color1>
+              <color2 r="255" g="255" b="255"></color2>
+              <point1 x="0" y="0"></point1>
+              <point2 x="0" y="0.6"></point2>
+            </linear-gradient>
+          </body>
+        </clip>
+      </body>
+    </transform>
+    <set-font>
+      <font family="Helvetica" style="" size="12"></font>
+    </set-font>
+    <set-draw-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-draw-color>
+    <set-text-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-text-color>
+    <rect style="D">
+      <frame x="50" y="60" w="40" h="10"></frame>
+    </rect>
+    <text string="Scale">
+      <point x="50" y="59"></point>
+    </text>
+    <transform>
+      <transformation>
+        <scale-xy scale-percentage="150">
+          <point x="50" y="70"></point>
+        </scale-xy>
+      </transformation>
+      <body>
+        <set-draw-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-draw-color>
+        <set-text-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-text-color>
+        <rect style="D">
+          <frame x="50" y="60" w="40" h="10"></frame>
+        </rect>
+        <text string="Scale">
+          <point x="50" y="59"></point>
+        </text>
+      </body>
+    </transform>
+    <set-draw-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-draw-color>
+    <set-text-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-text-color>
+    <rect style="D">
+      <frame x="125" y="60" w="40" h="10"></frame>
+    </rect>
+    <text string="Translate">
+      <point x="125" y="59"></point>
+    </text>
+    <transform>
+      <transformation>
+        <translate>
+          <point x="7" y="5"></point>
+        </translate>
+      </transformation>
+      <body>
+        <set-draw-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-draw-color>
+        <set-text-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-text-color>
+        <rect style="D">
+          <frame x="125" y="60" w="40" h="10"></frame>
+        </rect>
+        <text string="Translate">
+          <point x="125" y="59"></point>
+        </text>
+      </body>
+    </transform>
+    <set-draw-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-draw-color>
+    <set-text-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-text-color>
+    <rect style="D">
+      <frame x="50" y="110" w="40" h="10"></frame>
+    </rect>
+    <text string="Rotate">
+      <point x="50" y="109"></point>
+    </text>
+    <transform>
+      <transformation>
+        <rotate angle="20">
+          <point x="50" y="120"></point>
+        </rotate>
+      </transformation>
+      <body>
+        <set-draw-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-draw-color>
+        <set-text-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-text-color>
+        <rect style="D">
+          <frame x="50" y="110" w="40" h="10"></frame>
+        </rect>
+        <text string="Rotate">
+          <point x="50" y="109"></point>
+        </text>
+      </body>
+    </transform>
+    <set-draw-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-draw-color>
+    <set-text-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-text-color>
+    <rect style="D">
+      <frame x="125" y="110" w="40" h="10"></frame>
+    </rect>
+    <text string="Skew">
+      <point x="125" y="109"></point>
+    </text>
+    <transform>
+      <transformation>
+        <skew-x angle-x="30">
+          <point x="125" y="110"></point>
+        </skew-x>
+      </transformation>
+      <body>
+        <set-draw-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-draw-color>
+        <set-text-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-text-color>
+        <rect style="D">
+          <frame x="125" y="110" w="40" h="10"></frame>
+        </rect>
+        <text string="Skew">
+          <point x="125" y="109"></point>
+        </text>
+      </body>
+    </transform>
+    <set-draw-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-draw-color>
+    <set-text-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-text-color>
+    <rect style="D">
+      <frame x="50" y="160" w="40" h="10"></frame>
+    </rect>
+    <text string="Mirror horizontal">
+      <point x="50" y="159"></point>
+    </text>
+    <transform>
+      <transformation>
+        <horizontal-mirror x-axis="50"></horizontal-mirror>
+      </transformation>
+      <body>
+        <set-draw-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-draw-color>
+        <set-text-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-text-color>
+        <rect style="D">
+          <frame x="50" y="160" w="40" h="10"></frame>
+        </rect>
+        <text string="Mirror horizontal">
+          <point x="50" y="159"></point>
+        </text>
+      </body>
+    </transform>
+    <set-draw-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-draw-color>
+    <set-text-color>
+      <rgb r="200" g="200" b="200"></rgb>
+    </set-text-color>
+    <rect style="D">
+      <frame x="125" y="160" w="40" h="10"></frame>
+    </rect>
+    <text string="Mirror vertical">
+      <point x="125" y="159"></point>
+    </text>
+    <transform>
+      <transformation>
+        <vertical-mirror y-axis="170"></vertical-mirror>
+      </transformation>
+      <body>
+        <set-draw-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-draw-color>
+        <set-text-color>
+          <rgb r="0" g="0" b="0"></rgb>
+        </set-text-color>
+        <rect style="D">
+          <frame x="125" y="160" w="40" h="10"></frame>
+        </rect>
+        <text string="Mirror vertical">
+          <point x="125" y="159"></point>
+        </text>
+      </body>
+    </transform>
+  </body>
+</document>

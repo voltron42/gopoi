@@ -47,7 +47,15 @@ type Image struct {
 }
 
 func (i Image) Draw(ctx *context) error {
-	ctx.pdf.Image(i.FileName, i.Frame.X, i.Frame.Y, i.Frame.W, i.Frame.H, i.Flow, i.ImageFormat.String(), int(*i.Link), string(*i.LinkString))
+	link := 0
+	if i.Link != nil {
+		link = int(*i.Link)
+	}
+	linkStr := ""
+	if i.LinkString != nil {
+		linkStr = string(*i.LinkString)
+	}
+	ctx.pdf.Image(i.FileName, i.Frame.X, i.Frame.Y, i.Frame.W, i.Frame.H, i.Flow, i.ImageFormat.String(), link, linkStr)
 	return ctx.pdf.Error()
 }
 

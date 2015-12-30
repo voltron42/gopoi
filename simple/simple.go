@@ -14,7 +14,7 @@ type Document struct {
 }
 
 func (d Document) Publish() error {
-	ctx := newContext(d.Format)
+	ctx := d.Format.newContext()
 	if d.Header != nil {
 		if len(*d.Header) > 0 {
 			ctx.pdf.SetHeaderFunc(func() {
@@ -42,25 +42,25 @@ type Format struct {
 	OutputFile    string       `xml:"output-file,attr"`
 }
 
+func (f Format) newContext() *context {
+	orientation := ""
+	if f.Orientation != nil {
+		orientation = f.Orientation.String()
+	}
+	unit := ""
+	if f.Unit != nil {
+		unit = f.Unit.String()
+	}
+	size := ""
+	if f.Size != nil {
+		size = f.Size.String()
+	}
+	return &context{pdf: gofpdf.New(orientation, unit, size, f.FontDirectory), outfile: f.OutputFile}
+}
+
 type context struct {
 	pdf     *gofpdf.Fpdf
 	outfile string
-}
-
-func newContext(format Format) *context {
-	orientation := ""
-	if format.Orientation != nil {
-		orientation = format.Orientation.String()
-	}
-	unit := ""
-	if format.Unit != nil {
-		unit = format.Unit.String()
-	}
-	size := ""
-	if format.Size != nil {
-		size = format.Size.String()
-	}
-	return &context{pdf: gofpdf.New(orientation, unit, size, format.FontDirectory), outfile: format.OutputFile}
 }
 
 type Drawable interface {

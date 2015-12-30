@@ -7,10 +7,10 @@ import (
 type LinearGradient struct {
 	XMLName xml.Name   `xml:"linear-gradient" json:"-"`
 	Frame   Frame      `xml:"frame"`
-	Color1  RGB        `xml:"color1>rgb"`
-	Color2  RGB        `xml:"color2>rgb"`
-	Point1  Coordinate `xml:"point1>point"`
-	Point2  Coordinate `xml:"point2>point"`
+	Color1  RGB        `xml:"color1"`
+	Color2  RGB        `xml:"color2"`
+	Point1  Coordinate `xml:"point1"`
+	Point2  Coordinate `xml:"point2"`
 }
 
 func (l LinearGradient) Draw(ctx *context) error {
@@ -37,10 +37,10 @@ type RadialGradient struct {
 	XMLName xml.Name   `xml:"radial-gradient" json:"-"`
 	Radius  float64    `xml:"radius,attr"`
 	Frame   Frame      `xml:"frame"`
-	Color1  RGB        `xml:"color1>rgb"`
-	Color2  RGB        `xml:"color2>rgb"`
-	Point1  Coordinate `xml:"point1>point"`
-	Point2  Coordinate `xml:"point2>point"`
+	Color1  RGB        `xml:"color1"`
+	Color2  RGB        `xml:"color2"`
+	Point1  Coordinate `xml:"point1"`
+	Point2  Coordinate `xml:"point2"`
 }
 
 func (l RadialGradient) Draw(ctx *context) error {

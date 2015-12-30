@@ -84,4 +84,7 @@ func main() {
 		panic(err)
 	}
 	err = ioutil.WriteFile("polygon.xml", bytes, os.ModePerm)
+	if err != nil {
+		panic(err)
+	}
 }

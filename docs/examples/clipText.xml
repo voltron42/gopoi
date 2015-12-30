@@ -1,0 +1,110 @@
+<document>
+  <format orientation="Portrait" unit="mm" size="A4" font-dir="" output-file="clipText.pdf"></format>
+  <body>
+    <add-page></add-page>
+    <set-font>
+      <font family="Helvetica" style="" size="24"></font>
+    </set-font>
+    <set-xy x="0" y="10"/>
+    <clip>
+      <clip-item>
+        <clip-text text="Clipping examples" outline="false">
+          <point x="10" y="22"/>
+        </clip-text>
+      </clip-item>
+      <body>
+        <radial-gradient radius="0.2">
+          <frame x="10" y="10" w="100" h="20"/>
+          <color1 r="128" g="128" b="160"/>
+          <color2 r="32" g="32" b="48"/>
+          <point1 x="0.25" y="0.5"/>
+          <point2 x="0.25" y="0.5"/>
+        </radial-gradient>
+      </body>
+    </clip>
+    <set-font>
+      <font family="Helvetica" style="b" size="120"></font>
+    </set-font>
+    <set-draw-color>
+      <rgb r="64" g="80" b="80"/>
+    </set-draw-color>
+    <set-line-width width="0.5"/>
+    <clip>
+      <clip-item>
+        <clip-text text="Fpdf 1.7" outline="true">
+          <point x="10" y="62"/>
+        </clip-text>
+      </clip-item>
+      <body>
+        <radial-gradient radius="1">
+          <frame x="10" y="22" w="200" h="50"/>
+          <color1 r="220" g="220" b="250"/>
+          <color2 r="80" g="80" b="220"/>
+          <point1 x="0.25" y="0.5"/>
+          <point2 x="0.25" y="0.5"/>
+        </radial-gradient>
+      </body>
+    </clip>
+    <clip>
+      <clip-item>
+        <clip-rect outline="true">
+          <frame x="10" y="77" w="105" h="20"/>
+        </clip-rect>
+      </clip-item>
+      <body>
+        <set-fill-color>
+          <rgb r="255" g="255" b="255"/>
+        </set-fill-color>
+        <rect style="F">
+          <frame x="10" y="77" w="105" h="20"/>
+        </rect>
+        <clip>
+          <clip-item>
+            <clip-circle radius="15" outline="false">
+              <center x="40" y="87"/>
+            </clip-circle>
+          </clip-item>
+          <body>
+            <radial-gradient radius="0.5">
+              <frame x="25" y="77" w="30" h="30"/>
+              <color1 r="220" g="250" b="220"/>
+              <color2 r="40" g="60" b="40"/>
+              <point1 x="0.3" y="0.85"/>
+              <point2 x="0.3" y="0.85"/>
+            </radial-gradient>
+          </body>
+        </clip>
+        <clip>
+          <clip-item>
+            <clip-ellipse outline="false">
+              <center x="80" y="87"/>
+              <radius x="20" y="15"/>
+            </clip-ellipse>
+          </clip-item>
+          <body>
+            <radial-gradient radius="0.5">
+              <frame x="60" y="77" w="40" h="30"/>
+              <color1 r="250" g="220" b="220"/>
+              <color2 r="40" g="60" b="40"/>
+              <point1 x="0.3" y="0.85"/>
+              <point2 x="0.3" y="0.85"/>
+            </radial-gradient>
+          </body>
+        </clip>
+      </body>
+    </clip>
+    <clip>
+      <clip-item>
+        <clip-ellipse outline="true">
+          <center x="26" y="115"/>
+          <radius x="16" y="10"/>
+        </clip-ellipse>
+      </clip-item>
+      <body>
+        <image filename="logo.jpg" format="jpg">
+          <frame x="10" y="105" w="32" h="0"/>
+        </image>
+      </body>
+    </clip>
+  </body>
+</document>
